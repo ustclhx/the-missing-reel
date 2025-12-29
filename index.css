@@ -107,10 +107,14 @@
 
 /* Custom caret animation - slower blink for better readability */
 @keyframes caret-blink-slow {
-  0%, 49% {
+
+  0%,
+  49% {
     border-color: transparent;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     border-color: currentColor;
   }
 }
@@ -134,29 +138,48 @@
 
 /* 移动端优化 */
 @media (max-width: 768px) {
+
   /* 优化触摸目标大小 - 至少 44x44px */
-  button, a, input, select, textarea {
+  button,
+  a,
+  input,
+  select,
+  textarea {
     min-height: 44px;
     min-width: 44px;
   }
-  
+
   /* 优化文本可读性 */
   body {
-    font-size: 16px; /* 防止 iOS 自动缩放 */
+    font-size: 16px;
+    /* 防止 iOS 自动缩放 */
   }
-  
-  /* 优化滚动容器 */
+
+  /* 优化滚动容器 - iOS 特别优化 */
   .overflow-y-auto,
   .overflow-x-auto,
   .overflow-auto {
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
+    /* iOS 滚动修复 */
+    position: relative;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: scroll-position;
   }
-  
+
   /* 优化固定定位元素 */
   .fixed {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* 确保滚动容器有明确的高度 */
+  .flex-1 {
+    min-height: 0;
+    flex: 1 1 0%;
   }
 }
 
@@ -172,6 +195,7 @@
 
 /* 优化动画性能 */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -183,12 +207,13 @@
 
 /* 横屏优化 */
 @media (max-height: 500px) and (orientation: landscape) {
+
   /* 减小垂直间距 */
   .py-8 {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
-  
+
   .my-8 {
     margin-top: 1rem;
     margin-bottom: 1rem;
