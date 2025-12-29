@@ -20,21 +20,49 @@
     body {
       background-color: #050505;
       color: #e5e5e5;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      position: fixed;
       overflow: hidden;
       /* 移动端优化 */
       -webkit-tap-highlight-color: transparent;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
       user-select: none;
-      touch-action: manipulation;
-      /* 优化滚动性能 */
-      -webkit-overflow-scrolling: touch;
       /* 防止字体大小调整 */
       -webkit-text-size-adjust: 100%;
       text-size-adjust: 100%;
       /* 优化渲染性能 */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: fixed;
+    }
+
+    #root {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* 为所有滚动容器添加 iOS 优化 */
+    .overflow-y-auto,
+    .overflow-x-auto,
+    .overflow-auto {
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      /* iOS 滚动修复 */
+      position: relative;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
     }
 
     /* Custom Scrollbar for Recorder List */
@@ -209,8 +237,8 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/the-missing-reel/assets/index-CwRWT2jB.js"></script>
-  <link rel="stylesheet" crossorigin href="/the-missing-reel/assets/index-D5lAo-bb.css">
+  <script type="module" crossorigin src="/the-missing-reel/assets/index-DdiH9YnT.js"></script>
+  <link rel="stylesheet" crossorigin href="/the-missing-reel/assets/index-Du5z75j1.css">
 </head>
 
 <body>
