@@ -261,7 +261,7 @@ export const Recorder: React.FC<RecorderProps> = ({
                 </div>
             </div>
 
-            <div className="flex-1 flex flex-col md:flex-row overflow-hidden relative">
+            <div className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden relative">
 
                 {/* Sidebar: Tape List */}
                 <div className={`
@@ -328,7 +328,7 @@ export const Recorder: React.FC<RecorderProps> = ({
                 </div>
 
                 {/* Main Area: Script Player */}
-                <div className="flex-1 bg-black relative flex flex-col items-center justify-center p-6 overflow-hidden">
+                <div className="flex-1 bg-black relative flex flex-col items-center justify-center p-6 overflow-y-auto">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(30,30,30,1)_0%,rgba(0,0,0,1)_100%)]"></div>
 
                     {currentLog ? (
