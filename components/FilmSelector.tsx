@@ -159,7 +159,7 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
 
                 {/* THE KODAK VISION3 BOX - Aged & Textured */}
                 {/* Reverted to SQUARE aspect ratio */}
-                <div className="relative w-full max-w-[550px] h-auto max-h-[85vh] aspect-square shadow-2xl flex-shrink-0 group">
+                <div className="relative w-full max-w-[550px] h-auto max-h-[90vh] sm:max-h-[85vh] aspect-square shadow-2xl flex-shrink-0 group">
 
                     {/* Shadow/Grounding */}
                     <div className="absolute -bottom-8 left-4 right-4 h-10 bg-black/90 blur-xl rounded-[50%] transform scale-y-50"></div>
@@ -209,7 +209,7 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
                         </div>
 
                         {/* 3. MAIN YELLOW BODY CONTENT - Worn Look */}
-                        <div className="absolute top-[22%] bottom-0 left-4 md:left-8 right-0 p-3 md:p-6 flex flex-col relative z-20 h-[78%] pb-16">
+                        <div className="absolute top-[22%] bottom-0 left-2 sm:left-4 md:left-8 right-0 p-2 sm:p-3 md:p-6 flex flex-col relative z-20 h-[78%] pb-12 sm:pb-16">
 
                             {/* Stains and Wear Marks - Aged/Distressed Look - ENHANCED VISIBILITY */}
                             {/* Coffee/dirt stains - much more visible */}
@@ -234,10 +234,10 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
                             {/* BACK BUTTON INTEGRATION - Stamped Label */}
                             <button
                                 onClick={onBack}
-                                className="absolute top-0 right-0 border-[3px] border-[#da291c] p-1 rotate-3 hover:rotate-0 transition-transform cursor-pointer z-50 bg-yellow-500/10 hover:bg-yellow-500/20 shadow-md"
+                                className="absolute top-0 right-0 border-2 sm:border-[3px] border-[#da291c] p-0.5 sm:p-1 rotate-3 hover:rotate-0 transition-transform cursor-pointer z-50 bg-yellow-500/10 hover:bg-yellow-500/20 shadow-md"
                             >
-                                <div className="border-[2px] border-[#da291c] px-4 py-1 flex items-center justify-center">
-                                    <span className="text-[#da291c] font-black text-[10px] md:text-sm tracking-widest uppercase">
+                                <div className="border-[1.5px] sm:border-[2px] border-[#da291c] px-2 sm:px-4 py-0.5 sm:py-1 flex items-center justify-center">
+                                    <span className="text-[#da291c] font-black text-[8px] sm:text-[10px] md:text-sm tracking-widest uppercase">
                                         RETURN
                                     </span>
                                 </div>
@@ -264,32 +264,32 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
 
                             {/* Main Text & INTEGRATED REEL SELECTOR */}
                             <div className="relative z-10 flex flex-col gap-0 mt-0 shrink-0">
-                                <h1 className="text-[#1a1a1a] font-black text-2xl md:text-5xl tracking-tight leading-none drop-shadow-sm mix-blend-multiply opacity-90 blur-[0.4px]">
+                                <h1 className="text-[#1a1a1a] font-black text-xl sm:text-2xl md:text-5xl tracking-tight leading-none drop-shadow-sm mix-blend-multiply opacity-90 blur-[0.4px]">
                                     Super 8
                                 </h1>
 
                                 <div className="flex items-center gap-1 mt-1">
-                                    <span className="text-[#222] font-bold text-sm md:text-xl tracking-tighter opacity-80 blur-[0.2px] mix-blend-multiply">
+                                    <span className="text-[#222] font-bold text-xs sm:text-sm md:text-xl tracking-tighter opacity-80 blur-[0.2px] mix-blend-multiply">
                                         50D
                                     </span>
 
                                     {/* The New Integrated Reel Selector - Looks like batch stamp */}
-                                    <div className="flex items-center gap-1 border-[1px] border-[#1a1a1a]/40 px-1 py-0.5 transform -rotate-1 bg-[#d49a24]/20 z-50 relative shadow-sm hover:scale-105 transition-transform">
-                                        <span className="text-[8px] font-mono font-bold text-[#111] uppercase spacing-wide">BATCH</span>
-                                        <button onClick={() => changeReel(-1)} className="text-[#000] hover:text-[#da291c] font-black text-xs px-1.5 cursor-pointer transition-colors">&lt;</button>
-                                        <span className="text-lg font-mono font-bold text-[#000] min-w-[1.2rem] text-center relative">
+                                    <div className="flex items-center gap-0.5 sm:gap-1 border-[1px] border-[#1a1a1a]/40 px-0.5 sm:px-1 py-0.5 transform -rotate-1 bg-[#d49a24]/20 z-50 relative shadow-sm hover:scale-105 transition-transform">
+                                        <span className="text-[6px] sm:text-[8px] font-mono font-bold text-[#111] uppercase spacing-wide">BATCH</span>
+                                        <button onClick={() => changeReel(-1)} className="text-[#000] hover:text-[#da291c] font-black text-[10px] sm:text-xs px-1 sm:px-1.5 cursor-pointer transition-colors">&lt;</button>
+                                        <span className="text-sm sm:text-lg font-mono font-bold text-[#000] min-w-[1rem] sm:min-w-[1.2rem] text-center relative">
                                             {String(reelId).padStart(2, '0')}
                                         </span>
-                                        <button onClick={() => changeReel(1)} className="text-[#000] hover:text-[#da291c] font-black text-xs px-1.5 cursor-pointer transition-colors">&gt;</button>
+                                        <button onClick={() => changeReel(1)} className="text-[#000] hover:text-[#da291c] font-black text-[10px] sm:text-xs px-1 sm:px-1.5 cursor-pointer transition-colors">&gt;</button>
                                     </div>
                                 </div>
-                                <span className="text-[#222] font-bold text-lg md:text-xl tracking-tighter opacity-80 blur-[0.2px] mix-blend-multiply">
+                                <span className="text-[#222] font-bold text-sm sm:text-lg md:text-xl tracking-tighter opacity-80 blur-[0.2px] mix-blend-multiply">
                                     7203
                                 </span>
                             </div>
 
                             {/* Interaction Area - Stamped Squares - RIGID CONTAINER */}
-                            <div className="flex flex-shrink-0 items-center justify-start gap-2 md:gap-5 mt-2 relative z-50 pl-1 mix-blend-normal min-h-[80px] w-full">
+                            <div className="flex flex-wrap sm:flex-nowrap flex-shrink-0 items-center justify-start gap-1.5 sm:gap-2 md:gap-5 mt-1.5 sm:mt-2 relative z-50 pl-0.5 sm:pl-1 mix-blend-normal min-h-[60px] sm:min-h-[80px] w-full">
                                 {code.map((iconIndex, idx) => {
                                     const isUnlocked = FILM_ARCHIVE.find(r => r.reelNumber === reelId && unlockedReels.includes(r.id));
                                     return (
@@ -298,7 +298,7 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
                                             onClick={() => !isUnlocked && cycleIcon(idx)}
                                             disabled={!!isUnlocked}
                                             className={`
-                                                group relative w-12 h-12 md:w-20 md:h-20 flex-shrink-0 flex flex-col items-center justify-center 
+                                                group relative w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 flex-shrink-0 flex flex-col items-center justify-center 
                                                 bg-[#E8AA25] border-2 border-stone-800
                                                 ${!isUnlocked ? 'transition-all transform hover:-translate-y-1 cursor-pointer' : 'cursor-default opacity-90'}
                                             `}
@@ -306,7 +306,7 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
                                             {/* Paper texture on button */}
                                             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cardboard.png')] opacity-10 mix-blend-multiply pointer-events-none"></div>
 
-                                            <div className={`w-6 h-6 md:w-10 md:h-10 text-stone-900 transition-colors relative z-50 ${spinningReelIndex === idx ? 'opacity-0' : 'opacity-100'}`}>
+                                            <div className={`w-5 h-5 sm:w-6 sm:h-6 md:w-10 md:h-10 text-stone-900 transition-colors relative z-50 ${spinningReelIndex === idx ? 'opacity-0' : 'opacity-100'}`}>
                                                 <SketchIcon type={iconIndex} />
                                             </div>
 
@@ -321,7 +321,7 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
                                                 </div>
                                             )}
 
-                                            <span className="absolute bottom-1 right-1 text-[8px] text-stone-500 font-mono z-10">
+                                            <span className="absolute bottom-0.5 right-0.5 sm:bottom-1 sm:right-1 text-[6px] sm:text-[8px] text-stone-500 font-mono z-10">
                                                 0{idx + 1}
                                             </span>
                                         </button>
@@ -333,9 +333,9 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
                         </div>
 
                         {/* FINAL CONFIRM BUTTON & LOGO - Pinned to bottom of the box */}
-                        <div className="absolute bottom-4 left-6 right-6 flex justify-between items-end z-50 pointer-events-auto mix-blend-normal">
+                        <div className="absolute bottom-2 sm:bottom-4 left-3 sm:left-6 right-3 sm:right-6 flex justify-between items-end z-50 pointer-events-auto mix-blend-normal">
                             {/* Kodak K Logo */}
-                            <div className="w-10 h-10 text-[#C82015] opacity-90 mix-blend-multiply">
+                            <div className="w-8 h-8 sm:w-10 sm:h-10 text-[#C82015] opacity-90 mix-blend-multiply">
                                 <svg viewBox="0 0 100 100" fill="currentColor">
                                     <path d="M10 10 h15 v80 h-15 Z" />
                                     <path d="M35 10 h15 l35 35 l-35 35 h-15 l35 -35 Z" />
@@ -347,10 +347,10 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
                                 disabled={isShaking}
                                 className="
                                     relative overflow-hidden
-                                    border-[3px] border-stone-900
+                                    border-2 sm:border-[3px] border-stone-900
                                     text-stone-900
-                                    px-6 py-2
-                                    text-sm font-black uppercase tracking-widest
+                                    px-3 sm:px-6 py-1.5 sm:py-2
+                                    text-[10px] sm:text-sm font-black uppercase tracking-widest
                                     hover:bg-stone-900 hover:text-[#E8AA25]
                                     transition-colors
                                     flex items-center gap-2
