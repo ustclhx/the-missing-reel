@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { getAssetPath } from '../utils/assetPath';
+
 interface TitleScreenProps {
     onStart: () => void;
 }
@@ -29,7 +31,7 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({ onStart }) => {
                 </div>
                 {/* Logo */}
                 <img
-                    src="/hunstler_logo.jpg"
+                    src={getAssetPath("/hunstler_logo.jpg")}
                     alt="Hunstler Klub Logo"
                     className="w-24 h-auto opacity-80 mix-blend-screen blur-[0.5px] animate-pulse"
                     style={{

@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 
+import { getAssetPath } from '../utils/assetPath';
+
 interface FilmLoopIntroProps {
     onComplete: () => void;
 }
 
 export const FilmLoopIntro: React.FC<FilmLoopIntroProps> = ({ onComplete }) => {
     const images = [
-        '/assets/intro_film_1.jpg',
-        '/assets/intro_film_2.jpg'
+        getAssetPath('/assets/intro_film_1.jpg'),
+        getAssetPath('/assets/intro_film_2.jpg')
     ];
 
     useEffect(() => {

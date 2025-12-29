@@ -1,4 +1,5 @@
 
+import { getAssetPath } from './utils/assetPath';
 import { AudioLog, BlogEntry, FilmReel, Item } from './types';
 
 export const INITIAL_ITEMS: Item[] = [
@@ -1682,7 +1683,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'First Roll',
     contentTitle: 'First Roll',
     contentDesc: '模糊的画面里，一个人在酒吧里做酒，完成之后镜头不断推进，拍下放在三角杯中的特写。旁边的杯垫上写 50/50 Martini。',
-    contentImage: ['/assets/film_01.jpg', '/assets/film_02.jpg']
+    contentImage: [getAssetPath('/assets/film_01.jpg'), getAssetPath('/assets/film_02.jpg')]
   },
   {
     id: 'reel_02',
@@ -1691,7 +1692,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'Second Roll',
     contentTitle: 'Second Roll',
     contentDesc: '模糊的画面里，一个高个子在酒吧里做酒，完成之后镜头不断推进，拍下放在三角杯中的特写。旁边的杯垫上写 Steph。',
-    contentImage: ['/assets/film_02_1.jpg', '/assets/film_02_2.jpg']
+    contentImage: [getAssetPath('/assets/film_02_1.jpg'), getAssetPath('/assets/film_02_2.jpg')]
   },
   {
     id: 'reel_03',
@@ -1700,7 +1701,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'Film 4',
     contentTitle: 'Film 4',
     contentDesc: '模糊的画面里，一个高个子在吧台里摇酒，完成之后镜头不断推进，拍下放在三角杯中的特写。旁边的杯垫上写Whisky Sour。',
-    contentImage: ['/assets/film_03_1.jpg', '/assets/film_03_2.jpg']
+    contentImage: [getAssetPath('/assets/film_03_1.jpg'), getAssetPath('/assets/film_03_2.jpg')]
   },
   {
     id: 'reel_04',
@@ -1709,7 +1710,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'Fourth Roll',
     contentTitle: 'Fourth Roll',
     contentDesc: '晃动的画面，人影纠缠在一起，几乎没有拍到任何清晰图像。第二张内容中，一把钥匙落在地上，拍摄者用鞋将其踩住。',
-    contentImage: ['/assets/film_04_1.jpg', '/assets/film_04_2.jpg']
+    contentImage: [getAssetPath('/assets/film_04_1.jpg'), getAssetPath('/assets/film_04_2.jpg')]
   },
   {
     id: 'reel_06',
@@ -1718,7 +1719,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'Film 6',
     contentTitle: 'Film 6',
     contentDesc: '在昏黄的夜色中，一片狼藉的废墟堆在大街中央，与侧后方的现代建筑形成鲜明对比。远处的灯光与楼宇被笼罩在一层朦胧的雾气与虚焦中，仿佛一段尘封已久的陈旧记忆。',
-    contentImage: '/assets/film_06.jpg'
+    contentImage: getAssetPath('/assets/film_06.jpg')
   },
   {
     id: 'reel_07',
@@ -1727,7 +1728,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'Film 7',
     contentTitle: 'Film 7',
     contentDesc: '斑驳的暗色背景上，一首充满克苏鲁与诗意感的随笔出现在画面中。内容提到“虫洞”、“女权”与“返祖现象”，署名为一个鲜红的感叹号。',
-    contentImage: '/assets/film_07.jpg'
+    contentImage: getAssetPath('/assets/film_07.jpg')
   },
   {
     id: 'reel_00',
@@ -1737,13 +1738,13 @@ export const FILM_ARCHIVE: FilmReel[] = [
     contentTitle: 'Reel 0',
     contentDesc: '这是一堆被剪碎的不连续的胶卷，看起来是一个阴暗的酒吧废墟，其中几张展现出烟头烙印一般的白斑，看起来不同寻常。',
     contentImage: [
-      '/assets/film_00_3.jpg',
-      '/assets/film_00_4.jpg',
-      '/assets/film_00_5.jpg',
-      '/assets/film_00_6.jpg',
-      '/assets/film_00_7.jpg',
-      '/assets/film_00_8.jpg',
-      '/assets/film_00_9.jpg'
+      getAssetPath('/assets/film_00_3.jpg'),
+      getAssetPath('/assets/film_00_4.jpg'),
+      getAssetPath('/assets/film_00_5.jpg'),
+      getAssetPath('/assets/film_00_6.jpg'),
+      getAssetPath('/assets/film_00_7.jpg'),
+      getAssetPath('/assets/film_00_8.jpg'),
+      getAssetPath('/assets/film_00_9.jpg')
     ]
   },
   {
@@ -1753,7 +1754,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'Film 3',
     contentTitle: 'Film 3',
     contentDesc: '晃动的画面，看起来是在老店，拍摄者把摄影机递给孟奇，孟奇拍下了拍摄者自己的样貌和手举名牌的图像。一人手持标有《行为艺术与心灵治愈》的书籍图片被拍下。',
-    contentImage: '/assets/film_03.jpg'
+    contentImage: getAssetPath('/assets/film_03.jpg')
   },
   {
     id: 'reel_08',
@@ -1762,7 +1763,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'Film 8',
     contentTitle: 'Film 8',
     contentDesc: '在昏暗而幽闭的空间里，一叠书脊上印着《Are bats rats？》的样书静静地堆放着。厚重的阴影吞噬了大部分光线，微弱的回扣让书脊上的字迹显得格外苍白而诡异，透出一种压抑的怀旧气息。',
-    contentImage: '/assets/film_08.jpg'
+    contentImage: getAssetPath('/assets/film_08.jpg')
   },
   {
     id: 'reel_09',
@@ -1771,7 +1772,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'Film 9',
     contentTitle: 'Film 9',
     contentDesc: '在昏黄而充满颗粒感的画面中，一群年轻人席地而坐，周围散落着酒瓶与杂物。光影在墙壁上投射出沉重而幽暗的阴影，模糊的面容被笼罩在一层忧郁的怀旧感中，仿佛一段被时间遗忘的私人记录。',
-    contentImage: '/assets/film_09.jpg'
+    contentImage: getAssetPath('/assets/film_09.jpg')
   },
   {
     id: 'reel_10',
@@ -1780,7 +1781,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'Film Fan',
     contentTitle: '阿文_20221231',
     contentDesc: '喝醉的阿文趴在吧台沉沉睡着，手边是杯喝了一半的完美曼哈顿，旁边的书页上写着「电影迷」by taylor soigir。',
-    contentImage: '/assets/film_10.jpg'
+    contentImage: getAssetPath('/assets/film_10.jpg')
   },
   {
     id: 'reel_11',
@@ -1789,12 +1790,12 @@ export const FILM_ARCHIVE: FilmReel[] = [
     label: 'Jam 12.18',
     contentTitle: 'Jam 12.18',
     contentDesc: '吧台内的调酒师满怀期待地端起酒杯，面前的杯垫上写着配方：Jam 12.18。',
-    contentImage: ['/assets/film_11_1.jpg', '/assets/film_11_2.jpg']
+    contentImage: [getAssetPath('/assets/film_11_1.jpg'), getAssetPath('/assets/film_11_2.jpg')]
   }
 ];
 
 export const MUSIC_TRACKS = {
-  recorder: '/assets/recorder_music.mp3',
-  notebook: '/assets/recorder_music.mp3', // Using same music for ambient notebook view
-  film: '/assets/film_music.mp3',
+  recorder: getAssetPath('/assets/recorder_music.mp3'),
+  notebook: getAssetPath('/assets/recorder_music.mp3'), // Using same music for ambient notebook view
+  film: getAssetPath('/assets/film_music.mp3'),
 };

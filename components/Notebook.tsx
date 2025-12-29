@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { BLOG_ENTRIES } from '../constants';
 import { BlogEntry } from '../types';
+import { getAssetPath } from '../utils/assetPath';
 
 interface NotebookProps {
     onBack: () => void;
@@ -413,7 +414,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                                         `}
                                     >
                                         <img
-                                            src="/assets/shaker_cute.png"
+                                            src={getAssetPath("/assets/shaker_cute.png")}
                                             alt="Shake for Luck"
                                             className="w-full h-full object-contain drop-shadow-md opacity-90 contrast-125 sepia-[.2]"
                                         />
@@ -434,7 +435,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                                 {/* Corner Logo */}
                                 <div className={`absolute bottom-6 right-6 w-14 h-14 md:w-20 md:h-20 transition-transform duration-200 z-40 ${isSpinning ? 'animate-shake-logo' : 'hover:rotate-12'}`}>
                                     <img
-                                        src="/assets/dram_logo.png"
+                                        src={getAssetPath("/assets/dram_logo.png")}
                                         alt="Dram Logo"
                                         className="w-full h-full object-contain opacity-90 drop-shadow-sm"
                                     />
@@ -619,7 +620,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
 
                                 {currentEntry.attachments[pageIndex].endsWith('.png') || currentEntry.attachments[pageIndex].endsWith('.jpg') ? (
                                     <img
-                                        src={currentEntry.attachments[pageIndex]}
+                                        src={getAssetPath(currentEntry.attachments[pageIndex])}
                                         alt={`Page ${pageIndex + 1}`}
                                         className="w-full h-auto block rounded-sm opacity-90 transition-opacity duration-500"
                                     />
@@ -636,7 +637,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                                                 <div className="flex items-center gap-4 mt-8 justify-end">
                                                     <span className="font-serif italic">「所以，你找到真相了吗？」</span>
                                                     <img
-                                                        src="/hunstler_logo.jpg"
+                                                        src={getAssetPath("/hunstler_logo.jpg")}
                                                         alt="Hunstler Klub"
                                                         className="w-16 h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
                                                     />

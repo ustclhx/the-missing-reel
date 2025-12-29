@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { FilmReel } from '../types';
+import { getAssetPath } from '../utils/assetPath';
 
 interface ShreddedFilmViewerProps {
     film: FilmReel;
@@ -55,7 +56,7 @@ export const ShreddedFilmViewer: React.FC<ShreddedFilmViewerProps> = ({ film, on
                         {(idx === 2 || idx === 6) && (
                             <div className="absolute top-[8%] right-[12%] w-[25%] h-[30%] pointer-events-none z-30 overflow-hidden opacity-25 mix-blend-overlay group-hover:opacity-32 transition-opacity duration-700">
                                 <img
-                                    src="/assets/ghost_overlay.png"
+                                    src={getAssetPath("/assets/ghost_overlay.png")}
                                     alt=""
                                     className="w-full h-full object-contain opacity-50"
                                     style={{ filter: 'blur(3px) contrast(0.6) brightness(1.5) grayscale(0.3)' }}
@@ -124,7 +125,7 @@ export const ShreddedFilmViewer: React.FC<ShreddedFilmViewerProps> = ({ film, on
                             <>
                                 <div className="absolute top-[10%] right-[15%] w-[22%] h-[28%] pointer-events-none z-30 opacity-28 mix-blend-overlay">
                                     <img
-                                        src="/assets/ghost_overlay.png"
+                                        src={getAssetPath("/assets/ghost_overlay.png")}
                                         alt=""
                                         className="w-full h-full object-contain opacity-55"
                                         style={{ filter: 'blur(3.5px) contrast(0.5) brightness(1.6) grayscale(0.4)' }}
