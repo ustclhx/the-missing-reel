@@ -13,14 +13,14 @@ interface InventoryProps {
 
 export const Inventory: React.FC<InventoryProps> = ({ items, onSelectItem, unlockedLogs, unlockedBlogs, unlockedReels }) => {
     return (
-        <div className="flex-1 flex flex-col bg-[#0f0e0d] relative overflow-hidden font-sans">
+        <div className="flex-1 flex flex-col bg-[#0f0e0d] relative overflow-y-auto">
 
             {/* --- Global Atmosphere Layers --- */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(40,30,20,0.5)_0%,rgba(0,0,0,1)_90%)] z-0"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(40,30,20,0.5)_0%,rgba(0,0,0,1)_90%)] z-0 pointer-events-none"></div>
             <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] z-0 pointer-events-none mix-blend-overlay"></div>
 
             {/* --- Main Layout --- */}
-            <div className="flex-1 flex flex-col items-center justify-center p-6 md:p-12 z-10 relative">
+            <div className="flex-1 flex flex-col items-center p-6 md:p-12 z-10 relative min-h-full">
 
                 <header className="mb-12 border-b border-[#5c4d3c]/30 pb-4 text-center animate-in fade-in slide-in-from-top-4 duration-1000">
                     <h3 className="text-[10px] md:text-xs font-mono tracking-[0.8em] text-[#a89f91] opacity-60 uppercase">
@@ -96,6 +96,6 @@ export const Inventory: React.FC<InventoryProps> = ({ items, onSelectItem, unloc
                     />
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
