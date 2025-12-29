@@ -229,31 +229,31 @@ export const Recorder: React.FC<RecorderProps> = ({
     return (
         <div className="flex-1 flex flex-col bg-stone-900 relative">
             {/* Header / Controls */}
-            <div className="h-16 border-b border-stone-800 flex items-center justify-between px-6 bg-stone-900 shadow-md z-10">
-                <button onClick={onBack} className="text-stone-400 hover:text-white text-xs font-mono tracking-widest uppercase">
-                    [ POWER OFF ]
+            <div className="h-14 sm:h-16 border-b border-stone-800 flex items-center justify-between px-3 sm:px-6 bg-stone-900 shadow-md z-10">
+                <button onClick={onBack} className="text-stone-400 hover:text-white text-[10px] sm:text-xs font-mono tracking-widest uppercase shrink-0">
+                    [ OFF ]
                 </button>
-                <div className="flex items-center gap-4">
-                    <span className="text-[10px] text-stone-400 uppercase tracking-widest hidden md:inline">Tape Index:</span>
+                <div className="flex items-center gap-2 sm:gap-4 flex-1 justify-end">
+                    <span className="text-[10px] text-stone-400 uppercase tracking-widest hidden lg:inline">Tape Index:</span>
                     <div className="flex bg-stone-800/80 border border-stone-700 rounded-sm overflow-hidden group focus-within:border-stone-500 transition-colors items-center">
                         <input
                             type="text"
                             value={searchName}
                             onChange={(e) => setSearchName(e.target.value)}
                             placeholder="姓名"
-                            className="bg-transparent text-stone-100 px-2 py-1 text-sm focus:outline-none w-20 text-center font-serif-film placeholder-stone-600"
+                            className="bg-transparent text-stone-100 px-1.5 sm:px-2 py-1 text-xs sm:text-sm focus:outline-none w-14 sm:w-20 text-center font-serif-film placeholder-stone-600"
                         />
-                        <span className="text-stone-400 font-mono select-none">_</span>
+                        <span className="text-stone-400 font-mono select-none text-xs">_</span>
                         <input
                             type="text"
                             value={searchDate}
                             onChange={(e) => setSearchDate(e.target.value)}
                             placeholder="日期"
-                            className="bg-transparent text-stone-100 px-2 py-1 text-sm focus:outline-none w-24 text-center font-serif-film placeholder-stone-600"
+                            className="bg-transparent text-stone-100 px-1.5 sm:px-2 py-1 text-xs sm:text-sm focus:outline-none w-16 sm:w-24 text-center font-serif-film placeholder-stone-600"
                         />
                         <button
                             onClick={handleSearch}
-                            className="text-stone-300 bg-stone-700 px-3 py-1 text-xs border-l border-stone-600 hover:bg-stone-600 hover:text-white transition-colors h-full"
+                            className="text-stone-300 bg-stone-700 px-2 sm:px-3 py-1 text-[10px] sm:text-xs border-l border-stone-600 hover:bg-stone-600 hover:text-white transition-colors h-full"
                         >
                             PLAY
                         </button>
@@ -379,7 +379,7 @@ export const Recorder: React.FC<RecorderProps> = ({
                                 </>
                             )}
 
-                            <div className="w-full max-w-2xl relative z-10 flex flex-col h-full max-h-[600px] mb-12 px-12 md:px-16">
+                            <div className="w-full max-w-2xl relative z-10 flex flex-col h-full max-h-[70vh] sm:max-h-[600px] mb-8 sm:mb-12 px-4 sm:px-8 md:px-16">
                                 <div className="text-center mb-8 opacity-70">
                                     <h2 className="text-stone-500 text-xs font-mono tracking-[0.5em] uppercase border-b border-stone-800 pb-2 inline-block">
                                         {currentLog.title} // PAGE {currentPage + 1}

@@ -20,19 +20,19 @@ export const FilmViewer: React.FC<FilmViewerProps> = ({ film, onBack }) => {
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   return (
-    <div className="flex-1 bg-black flex flex-col relative p-4 overflow-hidden select-none">
+    <div className="flex-1 bg-black flex flex-col relative p-2 sm:p-4 overflow-hidden select-none">
       {/* Background Ambience */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(40,40,40,1)_0%,rgba(0,0,0,1)_90%)] z-0"></div>
       <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] z-0 pointer-events-none animate-pulse"></div>
 
-      <button onClick={onBack} className="absolute top-6 left-6 text-stone-500 hover:text-white z-30 text-xs font-mono tracking-widest uppercase">
-        [ STOP PROJECTION ]
+      <button onClick={onBack} className="absolute top-3 sm:top-6 left-3 sm:left-6 text-stone-500 hover:text-white z-30 text-[10px] sm:text-xs font-mono tracking-widest uppercase">
+        [ STOP ]
       </button>
 
       <div className="flex-1 flex items-center justify-center relative z-10 perspective-1000">
 
         {/* The Film Strip Container */}
-        <div className="relative bg-black border-y-8 border-black shadow-[0_0_50px_rgba(255,200,150,0.1)] transform rotate-1 scale-110 md:scale-125">
+        <div className="relative bg-black border-y-4 sm:border-y-8 border-black shadow-[0_0_50px_rgba(255,200,150,0.1)] transform rotate-1 scale-90 sm:scale-100 md:scale-110 lg:scale-125">
 
           {/* Backlight Glow behind the frames */}
           <div className="absolute top-1/2 left-0 right-0 h-40 -translate-y-1/2 bg-amber-100/10 blur-xl"></div>
@@ -49,7 +49,7 @@ export const FilmViewer: React.FC<FilmViewerProps> = ({ film, onBack }) => {
 
             {/* Frame 1 */}
             <div
-              className="relative w-64 md:w-80 aspect-[4/3] bg-black overflow-hidden border border-stone-800/50 cursor-pointer hover:border-amber-500/50 transition-colors"
+              className="relative w-48 sm:w-64 md:w-80 aspect-[4/3] bg-black overflow-hidden border border-stone-800/50 cursor-pointer hover:border-amber-500/50 transition-colors"
               onClick={() => setZoomedImage(frame1Image)}
             >
               <img
@@ -77,7 +77,7 @@ export const FilmViewer: React.FC<FilmViewerProps> = ({ film, onBack }) => {
 
             {/* Frame 2 (Continuous) */}
             <div
-              className="relative w-64 md:w-80 aspect-[4/3] bg-black overflow-hidden border border-stone-800/50 cursor-pointer hover:border-amber-500/50 transition-colors"
+              className="relative w-48 sm:w-64 md:w-80 aspect-[4/3] bg-black overflow-hidden border border-stone-800/50 cursor-pointer hover:border-amber-500/50 transition-colors"
               onClick={() => setZoomedImage(frame2Image)}
             >
               <img
@@ -123,7 +123,7 @@ export const FilmViewer: React.FC<FilmViewerProps> = ({ film, onBack }) => {
         <div className="inline-block relative">
           <div className="absolute -inset-4 bg-black/90 blur-md"></div>
           <p
-            className="relative text-transparent font-serif-film text-sm md:text-lg tracking-wide leading-relaxed max-w-2xl cursor-text select-text"
+            className="relative text-transparent font-serif-film text-xs sm:text-sm md:text-lg tracking-wide leading-relaxed max-w-2xl cursor-text select-text px-2"
             style={{
               userSelect: 'text',
               WebkitUserSelect: 'text'
