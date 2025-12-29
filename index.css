@@ -131,3 +131,66 @@
 .no-caret textarea {
   caret-color: transparent;
 }
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  /* 优化触摸目标大小 - 至少 44x44px */
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* 优化文本可读性 */
+  body {
+    font-size: 16px; /* 防止 iOS 自动缩放 */
+  }
+  
+  /* 优化滚动容器 */
+  .overflow-y-auto,
+  .overflow-x-auto,
+  .overflow-auto {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* 优化固定定位元素 */
+  .fixed {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* iOS 安全区域适配 */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-top: max(0px, env(safe-area-inset-top));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* 优化动画性能 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 横屏优化 */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* 减小垂直间距 */
+  .py-8 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .my-8 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

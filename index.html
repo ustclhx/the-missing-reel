@@ -1,103 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Missing Reel</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@300;400;700&family=Special+Elite&display=swap" rel="stylesheet">
-    <style>
-      body {
-        background-color: #050505;
-        color: #e5e5e5;
-        overflow: hidden;
-      }
-      /* Custom Scrollbar for Recorder List */
-      .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-      }
-      .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-      }
-      
-      /* Film Grain Animation */
-      @keyframes grain {
-        0%, 100% { transform: translate(0, 0); }
-        10% { transform: translate(-5%, -10%); }
-        20% { transform: translate(-15%, 5%); }
-        30% { transform: translate(7%, -25%); }
-        40% { transform: translate(-5%, 25%); }
-        50% { transform: translate(-15%, 10%); }
-        60% { transform: translate(15%, 0%); }
-        70% { transform: translate(0%, 15%); }
-        80% { transform: translate(3%, 35%); }
-        90% { transform: translate(-10%, 10%); }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#050505" />
+  <title>The Missing Reel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@300;400;700&family=Special+Elite&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      background-color: #050505;
+      color: #e5e5e5;
+      overflow: hidden;
+      /* 移动端优化 */
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+      /* 优化滚动性能 */
+      -webkit-overflow-scrolling: touch;
+      /* 防止字体大小调整 */
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      /* 优化渲染性能 */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Custom Scrollbar for Recorder List */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Film Grain Animation */
+    @keyframes grain {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
       }
 
-      .film-grain::after {
-        content: "";
-        position: absolute;
-        top: -100%;
-        left: -100%;
-        width: 300%;
-        height: 300%;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
-        animation: grain 8s steps(10) infinite;
-        pointer-events: none;
-        opacity: 0.15;
-        mix-blend-mode: overlay;
+      10% {
+        transform: translate(-5%, -10%);
       }
 
-      /* Flickering Effect */
-      @keyframes flicker {
-        0% { opacity: 0.97; }
-        5% { opacity: 0.9; }
-        10% { opacity: 0.95; }
-        15% { opacity: 1.0; }
-        20% { opacity: 0.98; }
-        50% { opacity: 0.95; }
-        80% { opacity: 0.9; }
-        100% { opacity: 0.97; }
-      }
-      .flicker {
-        animation: flicker 0.15s infinite;
+      20% {
+        transform: translate(-15%, 5%);
       }
 
-      /* Vertical Scratch Line */
-      @keyframes scratch {
-        0% { transform: translateX(0); opacity: 0.1; }
-        10% { transform: translateX(20px); opacity: 0.3; }
-        20% { transform: translateX(-10px); opacity: 0.1; }
-        40% { transform: translateX(50px); opacity: 0.0; }
-        100% { transform: translateX(0); opacity: 0.1; }
-      }
-      .scratch-line {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background: rgba(255, 255, 255, 0.4);
-        animation: scratch 2s infinite steps(2);
-        pointer-events: none;
-        z-index: 50;
+      30% {
+        transform: translate(7%, -25%);
       }
 
-      /* Handwriting Font */
-      .font-hand {
-        font-family: 'Special Elite', cursive;
+      40% {
+        transform: translate(-5%, 25%);
       }
-      /* Film/Typewriter Font */
-      .font-mono-film {
-        font-family: 'Courier Prime', monospace;
+
+      50% {
+        transform: translate(-15%, 10%);
       }
-      /* Title Card Font */
-      .font-serif-film {
-        font-family: 'Noto Serif SC', serif;
+
+      60% {
+        transform: translate(15%, 0%);
       }
-    </style>
+
+      70% {
+        transform: translate(0%, 15%);
+      }
+
+      80% {
+        transform: translate(3%, 35%);
+      }
+
+      90% {
+        transform: translate(-10%, 10%);
+      }
+    }
+
+    .film-grain::after {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      width: 300%;
+      height: 300%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
+      animation: grain 8s steps(10) infinite;
+      pointer-events: none;
+      opacity: 0.15;
+      mix-blend-mode: overlay;
+    }
+
+    /* Flickering Effect */
+    @keyframes flicker {
+      0% {
+        opacity: 0.97;
+      }
+
+      5% {
+        opacity: 0.9;
+      }
+
+      10% {
+        opacity: 0.95;
+      }
+
+      15% {
+        opacity: 1.0;
+      }
+
+      20% {
+        opacity: 0.98;
+      }
+
+      50% {
+        opacity: 0.95;
+      }
+
+      80% {
+        opacity: 0.9;
+      }
+
+      100% {
+        opacity: 0.97;
+      }
+    }
+
+    .flicker {
+      animation: flicker 0.15s infinite;
+    }
+
+    /* Vertical Scratch Line */
+    @keyframes scratch {
+      0% {
+        transform: translateX(0);
+        opacity: 0.1;
+      }
+
+      10% {
+        transform: translateX(20px);
+        opacity: 0.3;
+      }
+
+      20% {
+        transform: translateX(-10px);
+        opacity: 0.1;
+      }
+
+      40% {
+        transform: translateX(50px);
+        opacity: 0.0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 0.1;
+      }
+    }
+
+    .scratch-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.4);
+      animation: scratch 2s infinite steps(2);
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    /* Handwriting Font */
+    .font-hand {
+      font-family: 'Special Elite', cursive;
+    }
+
+    /* Film/Typewriter Font */
+    .font-mono-film {
+      font-family: 'Courier Prime', monospace;
+    }
+
+    /* Title Card Font */
+    .font-serif-film {
+      font-family: 'Noto Serif SC', serif;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -107,10 +208,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
+
+<body>
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
