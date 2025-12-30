@@ -275,6 +275,16 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                 <button onClick={onBack} className="text-xs bg-sky-800 hover:bg-sky-600 px-3 py-1 rounded border border-sky-400">退出登录</button>
             </div>
 
+            {/* Fixed Back Button - Only show in detail view */}
+            {selectedEntryId && (
+                <button
+                    onClick={() => setSelectedEntryId(null)}
+                    className="fixed top-20 left-4 z-50 text-xs font-mono text-stone-500 hover:text-sky-600 flex items-center gap-1 bg-white/95 backdrop-blur-sm px-3 py-2 rounded border border-stone-300 shadow-lg transition-all hover:shadow-xl hover:border-sky-400"
+                >
+                    ← BACK TO INDEX
+                </button>
+            )}
+
             {/* Success Overlay (Unlock Reward) */}
             {showSuccess && (
                 <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm animate-in fade-in duration-300 pointer-events-none">
@@ -518,12 +528,6 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                     ) : (
                         /* DETAIL VIEW */
                         <div className="relative group no-caret">
-                            <button
-                                onClick={() => setSelectedEntryId(null)}
-                                className="fixed top-4 left-4 z-50 mb-4 text-xs font-mono text-stone-500 hover:text-sky-600 flex items-center gap-1 bg-white/90 backdrop-blur-sm px-3 py-2 rounded border border-stone-300 shadow-md"
-                            >
-                                ← BACK TO INDEX
-                            </button>
 
                             <div className="bg-white border border-stone-300 p-6 shadow-sm relative z-20">
                                 <div className="border-b border-dashed border-stone-300 pb-2 mb-4 flex justify-between items-baseline">
