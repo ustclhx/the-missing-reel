@@ -148,7 +148,7 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
     };
 
     return (
-        <div className="fixed inset-0 w-full h-full bg-[#101010] flex flex-col items-center justify-center overflow-hidden select-none font-sans text-stone-300 perspective-1000">
+        <div className="fixed inset-0 w-full h-full bg-[#101010] flex flex-col items-center justify-center overflow-hidden font-sans text-stone-300 perspective-1000">
 
             {/* Atmosphere - Studio Dark with heavy grain */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1a1a1a_0%,#000000_100%)]"></div>

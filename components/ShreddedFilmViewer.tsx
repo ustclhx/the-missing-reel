@@ -13,7 +13,7 @@ export const ShreddedFilmViewer: React.FC<ShreddedFilmViewerProps> = ({ film, on
     const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
 
     return (
-        <div className="flex-1 bg-[#050505] flex flex-col relative p-8 overflow-hidden select-none">
+        <div className="flex-1 bg-[#050505] flex flex-col relative p-8 overflow-hidden">
             {/* Background Texture - Dark Wood/Desk feel */}
             <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')] z-0 pointer-events-none"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/60 z-0 pointer-events-none"></div>

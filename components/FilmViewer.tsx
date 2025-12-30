@@ -20,7 +20,7 @@ export const FilmViewer: React.FC<FilmViewerProps> = ({ film, onBack }) => {
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   return (
-    <div className="flex-1 bg-black flex flex-col relative p-2 sm:p-4 overflow-hidden select-none">
+    <div className="flex-1 bg-black flex flex-col relative p-2 sm:p-4 overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(40,40,40,1)_0%,rgba(0,0,0,1)_90%)] z-0"></div>
       <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] z-0 pointer-events-none animate-pulse"></div>
