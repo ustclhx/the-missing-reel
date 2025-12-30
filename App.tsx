@@ -423,6 +423,18 @@ const App: React.FC = () => {
     }
   };
 
+  // Reset game state for new game
+  const resetGameState = () => {
+    console.log('[App] Resetting game state for new game');
+    setUnlockedLogs(['log_auto']); // Reset to initial state
+    setUnlockedBlogs(['intro']); // Reset to initial state
+    setUnlockedReels([]); // Clear all unlocked reels
+    setHasAutoPlayedRecorder(false); // Reset auto-play flag
+    setHasEndingMusicFinished(false); // Reset ending music flag
+    setCurrentFilm(null); // Clear current film
+    setView(ViewState.INTRO); // Start from intro
+  };
+
   return (
     <Layout disableFilmEffects={view === ViewState.NOTEBOOK && isNotebookDetailView}>
       <BackgroundMusic
@@ -443,7 +455,7 @@ const App: React.FC = () => {
 
       {view === ViewState.SAVE_SELECT && (
         <SaveSelectScreen
-          onNewGame={() => setView(ViewState.INTRO)}
+          onNewGame={resetGameState}
           onContinue={() => setView(ViewState.INVENTORY)}
         />
       )}
