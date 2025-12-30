@@ -520,7 +520,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                         <div className="relative group no-caret">
                             <button
                                 onClick={() => setSelectedEntryId(null)}
-                                className="mb-4 text-xs font-mono text-stone-500 hover:text-sky-600 flex items-center gap-1"
+                                className="fixed top-4 left-4 z-50 mb-4 text-xs font-mono text-stone-500 hover:text-sky-600 flex items-center gap-1 bg-white/90 backdrop-blur-sm px-3 py-2 rounded border border-stone-300 shadow-md"
                             >
                                 ← BACK TO INDEX
                             </button>
