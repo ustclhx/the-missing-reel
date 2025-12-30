@@ -123,7 +123,7 @@ export const FilmViewer: React.FC<FilmViewerProps> = ({ film, onBack }) => {
         <div className="inline-block relative">
           <div className="absolute -inset-4 bg-black/90 blur-md"></div>
           <p
-            className="relative text-transparent font-serif-film text-xs sm:text-sm md:text-lg tracking-wide leading-relaxed max-w-2xl cursor-text select-text px-2"
+            className="relative text-stone-200 font-serif-film text-xs sm:text-sm md:text-lg tracking-wide leading-relaxed max-w-2xl cursor-text select-text px-2"
             style={{
               userSelect: 'text',
               WebkitUserSelect: 'text'
@@ -131,12 +131,6 @@ export const FilmViewer: React.FC<FilmViewerProps> = ({ film, onBack }) => {
           >
             {film.contentDesc}
           </p>
-          {/* Selection hint */}
-          <div className="absolute -bottom-8 left-0 right-0 text-center pointer-events-none">
-            <span className="text-stone-600 text-[10px] font-mono tracking-wide animate-pulse">
-              [ DRAG TO REVEAL TEXT ]
-            </span>
-          </div>
         </div>
       </div>
 
