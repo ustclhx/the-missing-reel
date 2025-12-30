@@ -117,7 +117,7 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
 
     const changeReel = (delta: number) => {
         setMessage('');
-        const nextReelId = Math.max(-3, Math.min(10, reelId + delta));
+        const nextReelId = Math.max(-3, Math.min(8, reelId + delta));
         setReelId(nextReelId);
     };
 
