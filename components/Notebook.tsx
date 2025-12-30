@@ -265,7 +265,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
     const currentEntry = selectedEntryId ? BLOG_ENTRIES.find(e => e.id === selectedEntryId) : null;
 
     return (
-        <div className="flex-1 bg-stone-200 flex flex-col relative overflow-hidden text-stone-800 font-sans">
+        <div className="flex-1 bg-stone-200 flex flex-col relative text-stone-800 font-sans">
             {/* Blog Header */}
             <div className="bg-sky-700 text-white p-4 border-b-4 border-sky-900 flex justify-between items-center shadow-lg relative z-20">
                 <div>
