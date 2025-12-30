@@ -275,15 +275,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                 <button onClick={onBack} className="text-xs bg-sky-800 hover:bg-sky-600 px-3 py-1 rounded border border-sky-400">退出登录</button>
             </div>
 
-            {/* Fixed Back Button - Only show in detail view */}
-            {selectedEntryId && (
-                <button
-                    onClick={() => setSelectedEntryId(null)}
-                    className="fixed top-20 left-4 z-50 text-xs font-mono text-stone-500 hover:text-sky-600 flex items-center gap-1 bg-white/95 backdrop-blur-sm px-3 py-2 rounded border border-stone-300 shadow-lg transition-all hover:shadow-xl hover:border-sky-400"
-                >
-                    ← BACK TO INDEX
-                </button>
-            )}
+
 
             {/* Success Overlay (Unlock Reward) */}
             {showSuccess && (
@@ -300,6 +292,16 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
             )}
 
             <div className="flex-1 overflow-y-auto p-4 md:p-8 bg-stone-200 relative z-10">
+                {/* Sticky Back Button - Only show in detail view */}
+                {selectedEntryId && (
+                    <button
+                        onClick={() => setSelectedEntryId(null)}
+                        className="sticky top-0 left-0 mb-4 text-xs font-mono text-stone-500 hover:text-sky-600 flex items-center gap-1 bg-white/95 backdrop-blur-sm px-3 py-2 rounded border border-stone-300 shadow-lg transition-all hover:shadow-xl hover:border-sky-400 z-50 w-fit"
+                    >
+                        ← BACK TO INDEX
+                    </button>
+                )}
+
                 {/* Background texture - only show on index view with reduced opacity */}
                 {!currentEntry && (
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-noise.png')] opacity-10 pointer-events-none z-0"></div>
