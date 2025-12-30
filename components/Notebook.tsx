@@ -296,7 +296,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                 {selectedEntryId && (
                     <button
                         onClick={() => setSelectedEntryId(null)}
-                        className="sticky top-0 left-0 mb-4 text-xs font-mono text-stone-500 hover:text-sky-600 flex items-center gap-1 bg-white/95 backdrop-blur-sm px-3 py-2 rounded border border-stone-300 shadow-lg transition-all hover:shadow-xl hover:border-sky-400 z-50 w-fit"
+                        className="sticky top-0 right-0 ml-auto mb-4 text-[10px] sm:text-xs font-mono text-stone-500 hover:text-sky-600 flex items-center gap-1 bg-white/95 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-2 rounded border border-stone-300 shadow-lg transition-all hover:shadow-xl hover:border-sky-400 z-50 w-fit"
                     >
                         ← BACK TO INDEX
                     </button>
