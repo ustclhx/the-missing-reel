@@ -16,6 +16,7 @@ import { Ending } from './components/Ending';
 import { ViewState, FilmReel } from './types';
 import { INITIAL_ITEMS, MUSIC_TRACKS } from './constants';
 import { SaveManager } from './utils/SaveManager';
+import { getAssetPath } from './utils/assetPath';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>(ViewState.FILM_LOOP);
@@ -84,7 +85,7 @@ const App: React.FC = () => {
   // Initialize Recorder audio element
   useEffect(() => {
     if (!recorderAudioRef.current) {
-      const audio = new Audio('/assets/recorder_music.mp3');
+      const audio = new Audio(getAssetPath('/assets/recorder_music.mp3'));
       audio.loop = true;
       audio.volume = 0.7; // 70% volume
       recorderAudioRef.current = audio;
@@ -101,7 +102,7 @@ const App: React.FC = () => {
   // Initialize Film audio element
   useEffect(() => {
     if (!filmAudioRef.current) {
-      const audio = new Audio('/assets/film_music.mp3');
+      const audio = new Audio(getAssetPath('/assets/film_music.mp3'));
       audio.loop = true;
       audio.volume = 0.7; // 70% volume
       filmAudioRef.current = audio;
@@ -118,7 +119,7 @@ const App: React.FC = () => {
   // Initialize Ending audio element
   useEffect(() => {
     if (!endingAudioRef.current) {
-      const audio = new Audio('/assets/end_music.mp3');
+      const audio = new Audio(getAssetPath('/assets/end_music.mp3'));
       audio.loop = false; // Play once, don't loop
       audio.volume = 0.7; // 70% volume
 
