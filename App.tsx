@@ -33,6 +33,8 @@ const App: React.FC = () => {
 
   // Track if we're viewing an article detail in Notebook
   const [isNotebookDetailView, setIsNotebookDetailView] = useState(false);
+  // User preference to separate toggle for flickering/film effects in Notebook
+  const [isFlickerDisabled, setIsFlickerDisabled] = useState(false);
 
   // Recorder background music state and management
   const [recorderMusicActive, setRecorderMusicActive] = useState(false);
@@ -437,7 +439,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Layout disableFilmEffects={view === ViewState.NOTEBOOK && isNotebookDetailView}>
+    <Layout disableFilmEffects={isFlickerDisabled || (view === ViewState.NOTEBOOK && isNotebookDetailView)}>
       <BackgroundMusic
         currentTrack={currentMusic}
         isMuted={isMusicMuted}
@@ -499,6 +501,8 @@ const App: React.FC = () => {
           unlockedBlogs={unlockedBlogs}
           onUnlockBlog={handleUnlockBlog}
           onViewChange={setIsNotebookDetailView}
+          isFlickerDisabled={isFlickerDisabled}
+          onToggleFlicker={() => setIsFlickerDisabled(prev => !prev)}
         />
       )}
 

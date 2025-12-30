@@ -9,6 +9,8 @@ interface NotebookProps {
     unlockedBlogs: string[];
     onUnlockBlog: (id: string) => void;
     onViewChange?: (isDetailView: boolean) => void;
+    isFlickerDisabled?: boolean;
+    onToggleFlicker?: () => void;
 }
 
 // Easter Egg Ingredients
@@ -17,7 +19,7 @@ const SLOT_2 = ['ancho reyes', 'frangelico', 'averna', 'cynar', 'campari', 'biga
 const SLOT_3 = ['fernet hunter', 'dolin dry', 'angostura', 'amontillado', 'manzanilla', 'Montenegro', 'heering', 'disaronno', 'bonal', 'benedictine', 'ancho reyes', 'frangelico', 'averna', 'cynar', 'campari', 'bigallet china-china', 'maraschino', 'fernet branca', 'Tanqueray Gin', 'Glen grant', 'sotol', 'mezcal', 'rye', 'bourbon', 'singani', 'flying king rum', "g'vine", 'shochu', 'vodka', 'brandy', 'apple jack'];
 const SLOT_4 = ['fernet hunter', 'dolin dry', 'angostura', 'amontillado', 'manzanilla', 'Montenegro', 'heering', 'disaronno', 'bonal', 'benedictine', 'ancho reyes', 'frangelico', 'averna', 'cynar', 'campari', 'bigallet china-china', 'maraschino', 'fernet branca', 'Tanqueray Gin', 'Glen grant', 'sotol', 'mezcal', 'rye', 'bourbon', 'singani', 'flying king rum', "g'vine", 'shochu', 'vodka', 'brandy', 'apple jack'];
 
-export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnlockBlog, onViewChange }) => {
+export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnlockBlog, onViewChange, isFlickerDisabled = false, onToggleFlicker }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [showSuccess, setShowSuccess] = useState<string | null>(null);
     const [errorMsg, setErrorMsg] = useState('');
@@ -272,7 +274,17 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                     <h1 className="text-xl font-bold tracking-tight">Apple's Secret Space</h1>
                     <p className="text-xs text-sky-200 mt-1">只记录真实的感受。</p>
                 </div>
-                <button onClick={onBack} className="text-xs bg-sky-800 hover:bg-sky-600 px-3 py-1 rounded border border-sky-400">退出登录</button>
+                <div className="flex items-center gap-3">
+                    {onToggleFlicker && (
+                        <button
+                            onClick={onToggleFlicker}
+                            className={`text-[10px] px-2 py-1 rounded border transition-colors ${isFlickerDisabled ? 'bg-stone-600 border-stone-500 text-stone-300 hover:bg-stone-500' : 'bg-sky-600 border-sky-400 text-white hover:bg-sky-500'}`}
+                        >
+                            {isFlickerDisabled ? '特效: OFF' : '特效: ON'}
+                        </button>
+                    )}
+                    <button onClick={onBack} className="text-xs bg-sky-800 hover:bg-sky-600 px-3 py-1 rounded border border-sky-400">退出登录</button>
+                </div>
             </div>
 
 
