@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { AudioLog } from '../types';
 import { AUDIO_LOGS } from '../constants';
+import { ThoughtBubble } from './ThoughtBubble';
 
 interface RecorderProps {
     onBack: () => void;
@@ -39,6 +40,24 @@ export const Recorder: React.FC<RecorderProps> = ({
     // Script Player State
     const [scriptLines, setScriptLines] = useState<ScriptLine[]>([]);
     const [currentPage, setCurrentPage] = useState(0);
+
+    // Tutorial Bubble State
+    const [showTutorial, setShowTutorial] = useState(false);
+
+    useEffect(() => {
+        // Check if tutorial has been seen
+        const hasSeenTutorial = localStorage.getItem('the-missing-reel-tutorial-seen');
+        if (!hasSeenTutorial) {
+            // Delay slightly for effect
+            const timer = setTimeout(() => setShowTutorial(true), 1000);
+            return () => clearTimeout(timer);
+        }
+    }, []);
+
+    const handleDismissTutorial = () => {
+        setShowTutorial(false);
+        localStorage.setItem('the-missing-reel-tutorial-seen', 'true');
+    };
 
     // Sidebar Pagination State
     const [tapePage, setTapePage] = useState(0);
@@ -478,6 +497,12 @@ export const Recorder: React.FC<RecorderProps> = ({
                     )}
                 </div>
             </div>
+            {/* Tutorial Bubble */}
+            <ThoughtBubble
+                text="苹果这家伙还藏了不少秘密，连一个录音机都设置了机关，看起来除了一个公开的录音外，其他的录音都需要按照对话对象+日期的格式检索才能暴露"
+                isVisible={showTutorial}
+                onClose={handleDismissTutorial}
+            />
         </div>
     );
 };

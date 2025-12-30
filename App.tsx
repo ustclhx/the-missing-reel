@@ -429,6 +429,7 @@ const App: React.FC = () => {
   // Reset game state for new game
   const resetGameState = () => {
     console.log('[App] Resetting game state for new game');
+    localStorage.removeItem('the-missing-reel-tutorial-seen'); // Reset tutorial bubble flag
     setUnlockedLogs(['log_auto']); // Reset to initial state
     setUnlockedBlogs(['intro']); // Reset to initial state
     setUnlockedReels([]); // Clear all unlocked reels
