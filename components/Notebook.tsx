@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BLOG_ENTRIES } from '../constants';
 import { BlogEntry } from '../types';
 import { getAssetPath } from '../utils/assetPath';
+import { ThoughtBubble } from './ThoughtBubble';
 
 interface NotebookProps {
     onBack: () => void;
@@ -24,6 +25,24 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
     const [showSuccess, setShowSuccess] = useState<string | null>(null);
     const [errorMsg, setErrorMsg] = useState('');
     const [selectedEntryId, setSelectedEntryId] = useState<string | null>(null);
+
+    // Tutorial Bubble State
+    const [showTutorial, setShowTutorial] = useState(false);
+
+    useEffect(() => {
+        // Check if tutorial has been seen
+        const hasSeenTutorial = localStorage.getItem('the-missing-reel-notebook-tutorial-seen');
+        if (!hasSeenTutorial) {
+            // Delay slightly for effect
+            const timer = setTimeout(() => setShowTutorial(true), 1500);
+            return () => clearTimeout(timer);
+        }
+    }, []);
+
+    const handleDismissTutorial = () => {
+        setShowTutorial(false);
+        localStorage.setItem('the-missing-reel-notebook-tutorial-seen', 'true');
+    };
 
     // Easter Egg State
     const [showEasterEgg, setShowEasterEgg] = useState(false);
@@ -288,6 +307,13 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
             </div>
 
 
+
+            {/* Tutorial Bubble */}
+            <ThoughtBubble
+                text="都出来写博客了，怎么还要这样藏来藏去，看来我要在其他地方获得一些酒名的线索才能偷窥他的树洞。这个闪来闪去的特效又是什么，有没有考虑过读者的眼睛，算他有良心还放了个可以关闭的按钮。"
+                isVisible={showTutorial}
+                onClose={handleDismissTutorial}
+            />
 
             {/* Success Overlay (Unlock Reward) */}
             {showSuccess && (
