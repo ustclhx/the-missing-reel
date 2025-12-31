@@ -570,9 +570,8 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                         <div className="relative group no-caret">
 
                             <div className="bg-white border border-stone-300 p-6 shadow-sm relative z-20">
-                                <div className="border-b border-dashed border-stone-300 pb-2 mb-4 flex justify-between items-baseline">
+                                <div className="border-b border-dashed border-stone-300 pb-2 mb-4">
                                     <h2 className="text-lg font-bold text-sky-800 font-mono">{currentEntry.title}</h2>
-                                    <span className="text-xs text-stone-400 font-mono">2020</span>
                                 </div>
 
                                 {/* Render Body */}
