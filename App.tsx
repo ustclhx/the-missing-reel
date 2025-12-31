@@ -440,7 +440,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Layout disableFilmEffects={isFlickerDisabled || (view === ViewState.NOTEBOOK && isNotebookDetailView)}>
+    <Layout disableFilmEffects={view === ViewState.NOTEBOOK && (isFlickerDisabled || isNotebookDetailView)}>
       <BackgroundMusic
         currentTrack={currentMusic}
         isMuted={isMusicMuted}
