@@ -124,21 +124,40 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
         }, 80);
     };
 
-    // Function to parse text and highlight phrases wrapped in __
+    // Function to parse text and highlight phrases wrapped in __ AND render images with [IMAGE:path]
     const renderContentWithHighlights = (content: string) => {
-        // Split by the delimiter __
-        const parts = content.split(/__([^_]+)__/g);
+        // First split by image markers to isolate them
+        const imageParts = content.split(/(\[IMAGE:[^\]]+\])/g);
 
-        return parts.map((part, index) => {
-            // Every odd index is the content inside the delimiters
-            if (index % 2 === 1) {
+        return imageParts.map((imagePart, imageIndex) => {
+            // Check if this part is an image marker
+            const imageMatch = imagePart.match(/\[IMAGE:([^\]]+)\]/);
+            if (imageMatch) {
+                const imagePath = imageMatch[1];
                 return (
-                    <span key={index} className="font-bold text-red-600 border-b-2 border-red-500/40 px-1 transform -rotate-2 inline-block">
-                        {part}
-                    </span>
+                    <div key={`img-${imageIndex}`} className="my-6 flex justify-center">
+                        <img
+                            src={getAssetPath(imagePath)}
+                            alt="Decoration"
+                            className="max-w-[200px] h-auto rounded-sm shadow-md border-2 border-stone-200 bg-white p-2"
+                        />
+                    </div>
                 );
             }
-            return <span key={index}>{part}</span>;
+
+            // Otherwise, process for highlights as before
+            const parts = imagePart.split(/__([^_]+)__/g);
+            return parts.map((part, index) => {
+                // Every odd index is the content inside the delimiters
+                if (index % 2 === 1) {
+                    return (
+                        <span key={`${imageIndex}-${index}`} className="font-bold text-red-600 border-b-2 border-red-500/40 px-1 transform -rotate-2 inline-block">
+                            {part}
+                        </span>
+                    );
+                }
+                return <span key={`${imageIndex}-${index}`}>{part}</span>;
+            });
         });
     };
 
