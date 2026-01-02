@@ -1,75 +1,78 @@
 
 import React, { useState, useRef } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { t } from '../utils/i18n';
 
 interface IntroProps {
   onComplete: () => void;
 }
 
-const SLIDES = [
-  {
-    content: (
-      <>
-        <p>“苹果”是我在摄影社最好的朋友。</p>
-        <p className="mt-8">到今天，他已经不告而别一周了。</p>
-      </>
-    )
-  },
-  {
-    content: (
-      <>
-        <p>这几年，苹果总是昼伏夜出，行踪神秘。</p>
-        <p className="mt-8">如今玩失踪，女友再也受不了，决定同他分手。</p>
-        <p className="mt-8">离开前，她将苹果寄放的背包交给了我。</p>
-      </>
-    )
-  },
-  {
-    content: (
-      <>
-        <p className="text-stone-400 text-base mb-8 tracking-widest uppercase">我打开背包，里面躺着：</p>
-        <ul className="space-y-4 text-stone-300 text-lg text-left inline-block list-none border-l-2 border-stone-800 pl-8 font-mono-film">
-          <li>📹 一台老式 8mm 摄影机</li>
-          <li>🎞️ 数不清的 8mm 胶卷，有些做了标记，有些是新的</li>
-          <li>📼 一支小型录音机</li>
-        </ul>
-      </>
-    )
-  },
-  {
-    content: (
-      <>
-        <p className="text-xl text-stone-200 mb-8 font-bold">苹果有一个秘密，只有我知道。</p>
-        <p className="text-base text-stone-400 leading-loose">
-          这些年，他其实一直在酒吧兼职打工。
-        </p>
-        <p className="mt-4 text-base text-stone-400 leading-loose">
-          他干得很有热情，在个人博客上写学习日记，
-        </p>
-        <p className="mt-4 text-base text-stone-400 leading-loose">
-          但却从未把这件事告诉过生活中的其他朋友。
-        </p>
-      </>
-    )
-  },
-  {
-    content: (
-      <>
-        <p className="text-lg text-stone-300 leading-loose mb-8">
-          所以自始至终，我也没能探明那家酒吧究竟在哪。
-        </p>
-        <div className="w-16 h-[1px] bg-stone-700 mx-auto my-8"></div>
-        <p className="text-xl text-stone-200 font-bold leading-relaxed">
-          如今，胶卷、录音机和博客，<br />就成了找到苹果的唯一线索。
-        </p>
-      </>
-    )
-  }
-];
-
 export const Intro: React.FC<IntroProps> = ({ onComplete }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [opacity, setOpacity] = useState(1);
   const isTransitioning = useRef(false);
+  const { language } = useLanguage();
+
+  const SLIDES = [
+    {
+      content: (
+        <>
+          <p>{t('introSlide1Line1', language)}</p>
+          <p className="mt-8">{t('introSlide1Line2', language)}</p>
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <p>{t('introSlide2Line1', language)}</p>
+          <p className="mt-8">{t('introSlide2Line2', language)}</p>
+          <p className="mt-8">{t('introSlide2Line3', language)}</p>
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <p className="text-stone-400 text-base mb-8 tracking-widest uppercase">{t('introSlide3Header', language)}</p>
+          <ul className="space-y-4 text-stone-300 text-lg text-left inline-block list-none border-l-2 border-stone-800 pl-8 font-mono-film">
+            <li>{t('introSlide3Item1', language)}</li>
+            <li>{t('introSlide3Item2', language)}</li>
+            <li>{t('introSlide3Item3', language)}</li>
+          </ul>
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <p className="text-xl text-stone-200 mb-8 font-bold">{t('introSlide4Line1', language)}</p>
+          <p className="text-base text-stone-400 leading-loose">
+            {t('introSlide4Line2', language)}
+          </p>
+          <p className="mt-4 text-base text-stone-400 leading-loose">
+            {t('introSlide4Line3', language)}
+          </p>
+          <p className="mt-4 text-base text-stone-400 leading-loose">
+            {t('introSlide4Line4', language)}
+          </p>
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <p className="text-lg text-stone-300 leading-loose mb-8">
+            {t('introSlide5Line1', language)}
+          </p>
+          <div className="w-16 h-[1px] bg-stone-700 mx-auto my-8"></div>
+          <p className="text-xl text-stone-200 font-bold leading-relaxed">
+            {t('introSlide5Line2', language)}
+          </p>
+        </>
+      )
+    }
+  ];
 
   const handleNext = () => {
     if (isTransitioning.current) return;
@@ -125,7 +128,7 @@ export const Intro: React.FC<IntroProps> = ({ onComplete }) => {
 
       <div className="absolute bottom-12 flex flex-col items-center gap-4 animate-pulse">
         <button className="text-stone-600 text-xs tracking-[0.3em] uppercase hover:text-stone-400 transition-colors">
-          {currentSlide === SLIDES.length - 1 ? "[ 点击开始调查 ]" : "[ 点击继续 ]"}
+          {currentSlide === SLIDES.length - 1 ? t('introClickStart', language) : t('introClickContinue', language)}
         </button>
       </div>
 
@@ -137,7 +140,7 @@ export const Intro: React.FC<IntroProps> = ({ onComplete }) => {
           }}
           className="text-stone-700 hover:text-stone-500 text-[10px] tracking-widest uppercase border border-stone-800/50 px-2 py-1 rounded-sm"
         >
-          SKIP
+          {t('introSkip', language)}
         </button>
       </div>
     </div>

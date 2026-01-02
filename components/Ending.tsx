@@ -1,29 +1,31 @@
 
 import React, { useState, useRef } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { t } from '../utils/i18n';
 
 interface EndingProps {
     onComplete: () => void;
 }
 
-const SLIDES = [
-    {
-        content: (
-            <>
-                <p className="text-xl text-stone-200 leading-loose">亲爱的朋友，感谢你为‘苹果’付出的时光。</p>
-                <p className="mt-8 text-stone-300">虽然眼下仍未寻得他的踪迹，但已经大致窥见了事件全貌。</p>
-                <div className="w-16 h-[1px] bg-stone-700 mx-auto my-12"></div>
-                <p className="text-lg text-stone-400 leading-relaxed italic">
-                    我们的故事还未结束，仅是暂告段落。现在，请在博客中搜索 'dram elysium'，<br />
-                    这是苹果截至最后一篇未被开启的博客内容，给陌生读者的小小礼物。
-                </p>
-            </>
-        )
-    }
-];
-
 export const Ending: React.FC<EndingProps> = ({ onComplete }) => {
     const [opacity, setOpacity] = useState(1);
     const isTransitioning = useRef(false);
+    const { language } = useLanguage();
+
+    const SLIDES = [
+        {
+            content: (
+                <>
+                    <p className="text-xl text-stone-200 leading-loose">{t('endingLine1', language)}</p>
+                    <p className="mt-8 text-stone-300">{t('endingLine2', language)}</p>
+                    <div className="w-16 h-[1px] bg-stone-700 mx-auto my-12"></div>
+                    <p className="text-lg text-stone-400 leading-relaxed italic">
+                        {t('endingLine3', language)}
+                    </p>
+                </>
+            )
+        }
+    ];
 
     const handleNext = () => {
         if (isTransitioning.current) return;
@@ -70,7 +72,7 @@ export const Ending: React.FC<EndingProps> = ({ onComplete }) => {
 
             <div className="absolute bottom-12 flex flex-col items-center gap-4 animate-pulse">
                 <button className="text-stone-600 text-xs tracking-[0.3em] uppercase hover:text-stone-400 transition-colors">
-                    [ 点击返回游戏 ]
+                    {t('endingClickReturn', language)}
                 </button>
             </div>
         </div>

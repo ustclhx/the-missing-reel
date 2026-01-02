@@ -1,10 +1,39 @@
 import React, { useState } from 'react';
-
+import { useLanguage } from '../contexts/LanguageContext';
+import { Language } from '../utils/i18n';
 import { getAssetPath } from '../utils/assetPath';
 
 interface TitleScreenProps {
     onStart: () => void;
 }
+
+const LanguageToggle: React.FC = () => {
+    const { language, setLanguage } = useLanguage();
+
+    return (
+        <div className="flex items-center gap-4 bg-stone-900/50 backdrop-blur-sm px-4 py-2 rounded-full border border-stone-800">
+            <button
+                onClick={() => setLanguage(Language.Chinese)}
+                className={`text-xs font-mono tracking-wider transition-all duration-300 ${language === Language.Chinese
+                        ? 'text-stone-100 font-bold scale-110 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]'
+                        : 'text-stone-600 hover:text-stone-400'
+                    }`}
+            >
+                中文
+            </button>
+            <div className="w-[1px] h-3 bg-stone-700"></div>
+            <button
+                onClick={() => setLanguage(Language.English)}
+                className={`text-xs font-mono tracking-wider transition-all duration-300 ${language === Language.English
+                        ? 'text-stone-100 font-bold scale-110 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]'
+                        : 'text-stone-600 hover:text-stone-400'
+                    }`}
+            >
+                ENGLISH
+            </button>
+        </div>
+    );
+};
 
 export const TitleScreen: React.FC<TitleScreenProps> = ({ onStart }) => {
     const [isFading, setIsFading] = useState(false);
@@ -38,6 +67,18 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({ onStart }) => {
                         filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.2))'
                     }}
                 />
+
+                {/* Language Selection */}
+                <div
+                    className="flex gap-6 mt-8"
+                    onClick={(e) => e.stopPropagation()} // Prevent triggering start when clicking language
+                >
+                    <LanguageToggle />
+                </div>
+
+                <div className="text-stone-500 font-mono text-xs tracking-widest mt-4 animate-pulse">
+                    [ CLICK TO ENTER ]
+                </div>
             </div>
 
             {/* Corner Credit */}

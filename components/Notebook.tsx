@@ -4,6 +4,8 @@ import { BLOG_ENTRIES } from '../constants';
 import { BlogEntry } from '../types';
 import { getAssetPath } from '../utils/assetPath';
 import { ThoughtBubble } from './ThoughtBubble';
+import { useLanguage } from '../contexts/LanguageContext';
+import { t } from '../utils/i18n';
 
 interface NotebookProps {
     onBack: () => void;
@@ -21,6 +23,7 @@ const SLOT_3 = ['fernet hunter', 'dolin dry', 'angostura', 'amontillado', 'manza
 const SLOT_4 = ['fernet hunter', 'dolin dry', 'angostura', 'amontillado', 'manzanilla', 'Montenegro', 'heering', 'disaronno', 'bonal', 'benedictine', 'ancho reyes', 'frangelico', 'averna', 'cynar', 'campari', 'bigallet china-china', 'maraschino', 'fernet branca', 'Tanqueray Gin', 'Glen grant', 'sotol', 'mezcal', 'rye', 'bourbon', 'singani', 'flying king rum', "g'vine", 'shochu', 'vodka', 'brandy', 'apple jack'];
 
 export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnlockBlog, onViewChange, isFlickerDisabled = false, onToggleFlicker }) => {
+    const { language } = useLanguage();
     const [searchQuery, setSearchQuery] = useState('');
     const [showSuccess, setShowSuccess] = useState<string | null>(null);
     const [errorMsg, setErrorMsg] = useState('');
@@ -443,9 +446,9 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                                     <h2 className="font-serif-film text-4xl text-stone-900 mb-4 tracking-tight" style={{ textShadow: '2px 2px 0px rgba(0,0,0,0.1)' }}>Dram Elysium</h2>
                                     <div className="relative inline-block">
                                         <p className="font-hand text-stone-600 text-sm md:text-base leading-relaxed max-w-lg mx-auto bg-white/60 p-4 border-2 border-stone-800 hand-drawn-border shadow-sm transform -rotate-1">
-                                            "你找到了彩蛋！这是一个随机配方工具，不知道做什么的调酒师们，请感受一下幸运！"
+                                            "{t('dramElysiumIntro', language)}"
                                             <br />
-                                            <span className="block mt-2 font-bold text-stone-800 text-right">——来自不吃苹果的苹果大王</span>
+                                            <span className="block mt-2 font-bold text-stone-800 text-right">{t('dramElysiumSignature', language)}</span>
                                         </p>
                                     </div>
                                 </div>

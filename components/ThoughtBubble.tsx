@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { getAssetPath } from '../utils/assetPath';
+import { useLanguage } from '../contexts/LanguageContext';
+import { t } from '../utils/i18n';
 
 interface ThoughtBubbleProps {
     text: string;
@@ -10,6 +12,7 @@ interface ThoughtBubbleProps {
 
 export const ThoughtBubble: React.FC<ThoughtBubbleProps> = ({ text, onClose, isVisible }) => {
     const [shouldRender, setShouldRender] = useState(isVisible);
+    const { language } = useLanguage();
 
     useEffect(() => {
         if (isVisible) {
@@ -31,7 +34,7 @@ export const ThoughtBubble: React.FC<ThoughtBubbleProps> = ({ text, onClose, isV
             <div className="relative bg-stone-900/90 border border-stone-600 px-6 py-10 rounded-xl shadow-2xl backdrop-blur-sm cursor-pointer hover:bg-stone-800/95 transition-colors group">
                 {/* Character Label */}
                 <div className="absolute -top-4 left-6 bg-stone-800 px-3 py-1 border border-stone-600 rounded text-xs text-stone-400 font-mono tracking-widest uppercase">
-                    Me / Investigator
+                    {t('thoughtBubbleLabel', language)}
                 </div>
 
                 {/* Text Content */}

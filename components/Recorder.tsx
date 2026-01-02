@@ -3,6 +3,8 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { AudioLog } from '../types';
 import { AUDIO_LOGS } from '../constants';
 import { ThoughtBubble } from './ThoughtBubble';
+import { useLanguage } from '../contexts/LanguageContext';
+import { t } from '../utils/i18n';
 
 interface RecorderProps {
     onBack: () => void;
@@ -109,9 +111,9 @@ export const Recorder: React.FC<RecorderProps> = ({
             return;
         }
 
-        const query = `${name}_${date}`;
+        const query = `${name}_${date}`.toLowerCase();
 
-        const foundLog = AUDIO_LOGS.find(log => log.searchId === query);
+        const foundLog = AUDIO_LOGS.find(log => log.searchId.toLowerCase() === query);
         if (foundLog) {
             if (!unlockedLogs.includes(foundLog.id)) {
                 onUnlockLog(foundLog.id);
@@ -234,16 +236,20 @@ export const Recorder: React.FC<RecorderProps> = ({
     };
 
     const getSpeakerStyle = (speaker: string) => {
-        if (speaker.includes('陌生人1')) return 'text-red-600 font-bold';
-        if (speaker.includes('苹果')) return 'text-stone-400';
+        // Support both Chinese and English names for bilingual compatibility
+        if (speaker.includes('陌生人1') || speaker.includes('Stranger 1')) return 'text-red-600 font-bold';
+        if (speaker.includes('苹果') || speaker.includes('Apple')) return 'text-stone-400';
         return 'text-amber-700';
     };
 
     const getDialogueStyle = (speaker: string) => {
-        if (speaker.includes('陌生人1')) return 'text-red-500/90 border-red-900/50 glitch-text';
-        if (speaker.includes('苹果')) return 'text-stone-200 border-stone-600';
+        // Support both Chinese and English names for bilingual compatibility
+        if (speaker.includes('陌生人1') || speaker.includes('Stranger 1')) return 'text-red-500/90 border-red-900/50 glitch-text';
+        if (speaker.includes('苹果') || speaker.includes('Apple')) return 'text-stone-200 border-stone-600';
         return 'text-amber-500/90 border-amber-900/50';
     };
+
+    const { language } = useLanguage();
 
     return (
         <div className="flex-1 flex flex-col bg-stone-900 relative">
@@ -499,7 +505,7 @@ export const Recorder: React.FC<RecorderProps> = ({
             </div>
             {/* Tutorial Bubble */}
             <ThoughtBubble
-                text="苹果这家伙还藏了不少秘密，连一个录音机都设置了机关，看起来除了一个公开的录音外，其他的录音都需要按照对话对象+日期的格式检索才能暴露"
+                text={t('recorderTutorial', language)}
                 isVisible={showTutorial}
                 onClose={handleDismissTutorial}
             />

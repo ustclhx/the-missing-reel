@@ -17,6 +17,7 @@ import { ViewState, FilmReel } from './types';
 import { INITIAL_ITEMS, MUSIC_TRACKS } from './constants';
 import { SaveManager } from './utils/SaveManager';
 import { getAssetPath } from './utils/assetPath';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>(ViewState.FILM_LOOP);
@@ -440,104 +441,106 @@ const App: React.FC = () => {
   };
 
   return (
-    <Layout disableFilmEffects={view === ViewState.NOTEBOOK && (isFlickerDisabled || isNotebookDetailView)}>
-      <BackgroundMusic
-        currentTrack={currentMusic}
-        isMuted={isMusicMuted}
-        onToggleMute={() => setIsMusicMuted(!isMusicMuted)}
-        isEndingMusicPlaying={isEndingMusicPlaying}
-        onStopEndingMusic={handleStopEndingMusic}
-      />
-
-      {view === ViewState.FILM_LOOP && (
-        <FilmLoopIntro onComplete={() => setView(ViewState.TITLE_SCREEN)} />
-      )}
-
-      {view === ViewState.TITLE_SCREEN && (
-        <TitleScreen onStart={() => setView(ViewState.SAVE_SELECT)} />
-      )}
-
-      {view === ViewState.SAVE_SELECT && (
-        <SaveSelectScreen
-          onNewGame={resetGameState}
-          onContinue={() => setView(ViewState.INVENTORY)}
+    <LanguageProvider>
+      <Layout disableFilmEffects={view === ViewState.NOTEBOOK && (isFlickerDisabled || isNotebookDetailView)}>
+        <BackgroundMusic
+          currentTrack={currentMusic}
+          isMuted={isMusicMuted}
+          onToggleMute={() => setIsMusicMuted(!isMusicMuted)}
+          isEndingMusicPlaying={isEndingMusicPlaying}
+          onStopEndingMusic={handleStopEndingMusic}
         />
-      )}
 
-      {view === ViewState.INTRO && (
-        <Intro onComplete={() => setView(ViewState.INVENTORY)} />
-      )}
+        {view === ViewState.FILM_LOOP && (
+          <FilmLoopIntro onComplete={() => setView(ViewState.TITLE_SCREEN)} />
+        )}
 
-      {view === ViewState.INVENTORY && (
-        <Inventory
-          items={INITIAL_ITEMS}
-          onSelectItem={handleSelectItem}
-          unlockedLogs={unlockedLogs}
-          unlockedBlogs={unlockedBlogs}
-          unlockedReels={unlockedReels}
-        />
-      )}
+        {view === ViewState.TITLE_SCREEN && (
+          <TitleScreen onStart={() => setView(ViewState.SAVE_SELECT)} />
+        )}
 
-      {view === ViewState.RECORDER && (
-        <Recorder
-          onBack={() => {
-            setRecorderMusicActive(false);
-            setView(ViewState.INVENTORY);
-          }}
-          unlockedLogs={unlockedLogs}
-          onUnlockLog={handleUnlockLog}
-          hasAutoPlayed={hasAutoPlayedRecorder}
-          setHasAutoPlayed={setHasAutoPlayedRecorder}
-          onTriggerEnding={() => {
-            setRecorderMusicActive(false);
-            setView(ViewState.ENDING);
-          }}
-          onMusicStart={() => setRecorderMusicActive(true)}
-        />
-      )}
-
-      {view === ViewState.NOTEBOOK && (
-        <Notebook
-          onBack={() => setView(ViewState.INVENTORY)}
-          unlockedBlogs={unlockedBlogs}
-          onUnlockBlog={handleUnlockBlog}
-          onViewChange={setIsNotebookDetailView}
-          isFlickerDisabled={isFlickerDisabled}
-          onToggleFlicker={() => setIsFlickerDisabled(prev => !prev)}
-        />
-      )}
-
-      {view === ViewState.FILM_SELECT && (
-        <FilmSelector
-          onBack={() => setView(ViewState.INVENTORY)}
-          onSelectReel={(film) => {
-            setCurrentFilm(film);
-            setView(ViewState.FILM_VIEW);
-          }}
-          unlockedReels={unlockedReels}
-          onUnlockReel={handleUnlockReel}
-        />
-      )}
-
-
-      {view === ViewState.FILM_VIEW && currentFilm && (
-        currentFilm.id === 'reel_00' ? (
-          <ShreddedFilmViewer
-            film={currentFilm}
-            onBack={() => setView(ViewState.FILM_SELECT)}
+        {view === ViewState.SAVE_SELECT && (
+          <SaveSelectScreen
+            onNewGame={resetGameState}
+            onContinue={() => setView(ViewState.INVENTORY)}
           />
-        ) : (
-          <FilmViewer
-            film={currentFilm}
-            onBack={() => setView(ViewState.FILM_SELECT)}
-          />
-        )
-      )}
+        )}
 
-      {view === ViewState.ENDING && (
-        <Ending onComplete={() => setView(ViewState.INVENTORY)} />
-      )}
-    </Layout>
+        {view === ViewState.INTRO && (
+          <Intro onComplete={() => setView(ViewState.INVENTORY)} />
+        )}
+
+        {view === ViewState.INVENTORY && (
+          <Inventory
+            items={INITIAL_ITEMS}
+            onSelectItem={handleSelectItem}
+            unlockedLogs={unlockedLogs}
+            unlockedBlogs={unlockedBlogs}
+            unlockedReels={unlockedReels}
+          />
+        )}
+
+        {view === ViewState.RECORDER && (
+          <Recorder
+            onBack={() => {
+              setRecorderMusicActive(false);
+              setView(ViewState.INVENTORY);
+            }}
+            unlockedLogs={unlockedLogs}
+            onUnlockLog={handleUnlockLog}
+            hasAutoPlayed={hasAutoPlayedRecorder}
+            setHasAutoPlayed={setHasAutoPlayedRecorder}
+            onTriggerEnding={() => {
+              setRecorderMusicActive(false);
+              setView(ViewState.ENDING);
+            }}
+            onMusicStart={() => setRecorderMusicActive(true)}
+          />
+        )}
+
+        {view === ViewState.NOTEBOOK && (
+          <Notebook
+            onBack={() => setView(ViewState.INVENTORY)}
+            unlockedBlogs={unlockedBlogs}
+            onUnlockBlog={handleUnlockBlog}
+            onViewChange={setIsNotebookDetailView}
+            isFlickerDisabled={isFlickerDisabled}
+            onToggleFlicker={() => setIsFlickerDisabled(prev => !prev)}
+          />
+        )}
+
+        {view === ViewState.FILM_SELECT && (
+          <FilmSelector
+            onBack={() => setView(ViewState.INVENTORY)}
+            onSelectReel={(film) => {
+              setCurrentFilm(film);
+              setView(ViewState.FILM_VIEW);
+            }}
+            unlockedReels={unlockedReels}
+            onUnlockReel={handleUnlockReel}
+          />
+        )}
+
+
+        {view === ViewState.FILM_VIEW && currentFilm && (
+          currentFilm.id === 'reel_00' ? (
+            <ShreddedFilmViewer
+              film={currentFilm}
+              onBack={() => setView(ViewState.FILM_SELECT)}
+            />
+          ) : (
+            <FilmViewer
+              film={currentFilm}
+              onBack={() => setView(ViewState.FILM_SELECT)}
+            />
+          )
+        )}
+
+        {view === ViewState.ENDING && (
+          <Ending onComplete={() => setView(ViewState.INVENTORY)} />
+        )}
+      </Layout>
+    </LanguageProvider>
   );
 };
 

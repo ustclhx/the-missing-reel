@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SaveManager } from '../utils/SaveManager';
+import { useLanguage } from '../contexts/LanguageContext';
+import { t } from '../utils/i18n';
 
 interface SaveSelectScreenProps {
     onNewGame: () => void;
@@ -7,6 +9,7 @@ interface SaveSelectScreenProps {
 }
 
 export const SaveSelectScreen: React.FC<SaveSelectScreenProps> = ({ onNewGame, onContinue }) => {
+    const { language } = useLanguage();
     const [isFading, setIsFading] = useState(false);
     const [hasSave, setHasSave] = useState(false);
 
@@ -46,7 +49,7 @@ export const SaveSelectScreen: React.FC<SaveSelectScreenProps> = ({ onNewGame, o
                                  hover:bg-[#2a2624] hover:border-[#a89078] hover:text-[#ffecd1] 
                                  transition-all duration-300 cursor-pointer min-w-[200px]"
                     >
-                        新游戏
+                        {t('newGame', language)}
                     </button>
 
                     {hasSave && (
@@ -56,7 +59,7 @@ export const SaveSelectScreen: React.FC<SaveSelectScreenProps> = ({ onNewGame, o
                                      hover:bg-[#1a1816] hover:border-[#786650] hover:text-[#d6cbb8]
                                      transition-all duration-300 cursor-pointer min-w-[200px]"
                         >
-                            继续游戏
+                            {t('continueGame', language)}
                         </button>
                     )}
                 </div>
