@@ -13,9 +13,9 @@ export const ProgressTracker: React.FC<ProgressTrackerProps> = ({
 }) => {
     // Total unlockable content counts
     const TOTAL_LOGS = 19;
-    const TOTAL_BLOGS = 21;
-    const TOTAL_REELS = 11;
-    const TOTAL_ITEMS = TOTAL_LOGS + TOTAL_BLOGS + TOTAL_REELS; // 51
+    const TOTAL_BLOGS = 19;  // 19 total blogs (intro is always unlocked and counted in unlockedBlogs)
+    const TOTAL_REELS = 12;
+    const TOTAL_ITEMS = TOTAL_LOGS + TOTAL_BLOGS + TOTAL_REELS; // 50
 
     // Calculate current progress
     const unlockedCount = unlockedLogs.length + unlockedBlogs.length + unlockedReels.length;
