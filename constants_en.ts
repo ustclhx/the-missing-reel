@@ -1155,7 +1155,7 @@ However, messing it up for __Vin__ on my first day and having it sent back made 
 
 Today he mentioned that long-missing customer, encouraging me to do something with the film he left behind. Actually, I've already carefully examined all these old, brittle film reels and marked all the usable parts __in a completely symmetrical way__ (maybe all usable?).
 
-How to put it? Being able to utilize footage shot by others years ago will give my documentary a strong sense of temporal dislocation, which is perfect! Moreover, this customer __Lynn__ has already appeared in images from two different time periods. When she visits again, I need to talk to her about my documentary plan!`
+How to put it? Being able to utilize footage shot by others years ago will give my documentary a strong sense of temporal dislocation, which is perfect! Moreover, this customer has already appeared in images from two different time periods. When he visits again, I need to talk to him about my documentary plan!`
     },
     {
         id: 'francis_albert',
