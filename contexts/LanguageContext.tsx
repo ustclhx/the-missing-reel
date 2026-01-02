@@ -28,6 +28,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     const setLanguage = (lang: Language) => {
         setLanguageState(lang);
         localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+        // Set flag to skip intro animation on reload
+        sessionStorage.setItem('the-missing-reel-skip-intro', 'true');
         // Reload page to ensure all static imports update with new language
         window.location.reload();
     };

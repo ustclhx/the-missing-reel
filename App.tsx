@@ -20,7 +20,14 @@ import { getAssetPath } from './utils/assetPath';
 import { LanguageProvider } from './contexts/LanguageContext';
 
 const App: React.FC = () => {
-  const [view, setView] = useState<ViewState>(ViewState.FILM_LOOP);
+  const [view, setView] = useState<ViewState>(() => {
+    // Check if we should skip intro (e.g. after language switch)
+    if (typeof window !== 'undefined' && sessionStorage.getItem('the-missing-reel-skip-intro')) {
+      sessionStorage.removeItem('the-missing-reel-skip-intro');
+      return ViewState.SAVE_SELECT;
+    }
+    return ViewState.FILM_LOOP;
+  });
   const [unlockedLogs, setUnlockedLogs] = useState<string[]>(['log_auto']); // First log unlocked
   const [unlockedBlogs, setUnlockedBlogs] = useState<string[]>(['intro']); // Intro blog unlocked
   const [unlockedReels, setUnlockedReels] = useState<string[]>([]); // Track unlocked film reels
