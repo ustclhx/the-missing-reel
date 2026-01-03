@@ -3,7 +3,7 @@ import { getAssetPath } from './utils/assetPath';
 import { AudioLog, BlogEntry, FilmReel, Item } from './types';
 
 export const INITIAL_ITEMS: Item[] = [
-    { id: 'recorder', name: 'Voice Recorder', icon: '📼', description: 'Contains a cassette tape with recorded conversations.' },
+    { id: 'recorder', name: 'Voice Recorder', icon: '📼', description: 'Contains cassette tapes with recorded conversations.' },
     { id: 'notebook', name: 'Blog Archive', icon: '💻', description: 'Password-protected archive of historical logs.' },
     { id: 'film', name: '8mm Film Reels', icon: '🎞️', description: '40 reels total, marked with 4 different glass shapes for ordering. Each reel shows no more than 2 glass types.' },
 ];
@@ -125,7 +125,7 @@ Apple：I know, it's not for that... I have other plans.`
         content: `Quiet, soothing piano solo. A sudden sneeze temporarily interrupts other customers' conversations. Just as the talking resumes, another sneeze.
 
 __Apple__：I thought we wouldn't see you for a while, they said you were sick.
-__Monty__：A cold requires more drinking. Get me my bottle of whisky.
+__Monty__：Caught a cold, more alcohol needed. Get me my bottle of whisky.
 Apple：With ice?
 Monty：Just some hot water.
 
@@ -157,7 +157,7 @@ Monty：That's what the friend who also likes drinking whisky this way said.
 Apple：I think I've heard them mention this person, also an old customer.
 Monty：No, he was my friend.
 Apple：Tell me, what kind of person was he?
-Monty：Back then we both worked for a theater company, he made documentaries, I did music. After work we'd find a bar to continue talking about films. He especially loved to talk, from Abbas to Kurosawa, all his favorites. At first we went everywhere, then we discovered this bar. He immediately recognized __Lee Chang-dong__'s signature on the poster on the wall, and after that we never went anywhere else.
+Monty：Back then we both worked for a theater company, he made documentaries, I did music. After work we'd find a bar to continue talking about films. He especially enjoyed talking from Abbas to Kurosawa, all his favorites. At first we went everywhere, then we discovered this bar. He immediately recognized __Lee Chang-dong__'s signature on the poster on the wall, and after that we never went anywhere else.
 Apple：The poster?
 Monty：Right, it's hanging behind you right now.
 Apple：So he's a documentary director?
@@ -169,7 +169,7 @@ Monty：Go use it, he's vanished from the world anyway.
 
 Sound of sipping.
 
-Apple：You're his friend, don't you know where he went?
+Apple：You were his friend, don't you know where he went?
 Monty：No idea, don't know if he's alive or dead, all previous contact methods are invalid.
 Apple：Well... I found some film reels he shot.
 Monty：Hey, when these moments were first recorded on film I thought they were ordinary, but in a flash they've become historical relics.
@@ -1167,7 +1167,7 @@ How to put it? Being able to utilize footage shot by others years ago will give 
     Wild Turkey Rare Breed Whiskey 28ml
     Lemon Peel
 
-__Monty__ really was sick. A whole week passed before he finally appeared again on __the day before Halloween__. During this time I chatted with other regulars about this drink. They say __Ash__ has always been known for this cocktail, but looking at just the recipe, he simply follows the classic method completely.
+__Monty__ was indeed sick. A whole week passed before he finally appeared again on __the day before Halloween__. During this time I chatted with other regulars about this drink. They say __Ash__ has always been known for this cocktail, but looking at just the recipe, he simply follows the classic method completely.
 
 When Monty reappeared, he kept his promise and told me Ash's secret for making this drink. Turns out the trick is putting in slightly less whiskey. I tried it, my mind full of "of course" thoughts: Rich yet crisp citrus and pineapple aromas, the unpleasant tangled bark smell of bourbon whiskey is diluted by the botanical notes of gin. Truly marvelous! According to Monty, this was also the missing customer's favorite.
 

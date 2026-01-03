@@ -526,7 +526,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                                     <div className="relative bg-[#f0eadd] p-6 border border-[#d6cbb8] shadow-md rounded-sm">
                                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-6 bg-red-900/10 blur-[1px] transform rotate-1"></div>
                                         <div className="border-b border-stone-300 pb-2 mb-2 flex justify-between">
-                                            <span className="text-xs font-mono text-stone-500 uppercase tracking-widest">README.TXT</span>
+                                            <span className="text-xs font-mono text-stone-500 uppercase tracking-widest">{t('readme', language)}.TXT</span>
                                             <span className="text-xs font-mono text-stone-400">2020.05.20</span>
                                         </div>
                                         <p className="font-hand text-lg text-stone-800 leading-relaxed font-bold">
@@ -538,13 +538,13 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
 
                             {/* Search/Unlock Box */}
                             <div className="bg-stone-900 border-2 border-stone-700 p-4 shadow-md rounded-sm caret-slow">
-                                <label className="block text-xs font-bold text-stone-400 uppercase mb-2">学习检索 (输入鸡尾酒名):</label>
+                                <label className="block text-xs font-bold text-stone-400 uppercase mb-2">{t('searchLabel', language)}</label>
                                 <div className="flex gap-2">
                                     <input
                                         type="text"
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
-                                        placeholder="例如: Boiler Maker"
+                                        placeholder={t('searchPlaceholder', language)}
                                         className={`flex-1 bg-stone-800 text-stone-200 border border-stone-600 p-2 text-sm focus:outline-none focus:border-sky-500 font-mono ${isUnlockingEasterEgg ? 'border-amber-400 bg-amber-50 text-amber-600 shadow-[0_0_30px_rgba(251,191,36,0.4)] scale-105 transition-all duration-300' : ''}`}
                                         onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
                                     />
@@ -552,7 +552,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                                         onClick={handleSearch}
                                         className="bg-stone-200 border border-stone-400 px-4 text-xs font-bold hover:bg-stone-300 text-stone-700 transition-colors"
                                     >
-                                        解锁
+                                        {t('unlock', language)}
                                     </button>
                                 </div>
                                 {errorMsg && <p className="text-xs text-red-400 mt-2">{errorMsg}</p>}
@@ -561,7 +561,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                             {/* Directory List */}
                             <div>
                                 <h3 className="text-stone-500 font-mono text-xs uppercase tracking-widest mb-4 border-b border-stone-300 pb-2">
-                                    Archived Entries ({unlockedBlogs.filter(id => id !== 'intro').length})
+                                    {t('archivedEntries', language)} ({unlockedBlogs.filter(id => id !== 'intro').length})
                                 </h3>
                                 <div className="grid gap-3">
                                     {BLOG_ENTRIES.map(entry => {
@@ -600,7 +600,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                                 {renderBlogBody(currentEntry)}
 
                                 <div className="mt-6 pt-4 border-t border-stone-100 text-[10px] text-stone-400 text-right font-mono">
-                                    Posted by Apple
+                                    {t('postedBy', language)} Apple
                                 </div>
                             </div>
 

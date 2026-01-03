@@ -120,6 +120,10 @@ export const uiTranslations = {
         zh: '主页',
         en: 'README',
     },
+    searchLabel: {
+        zh: '学习检索 (输入鸡尾酒名):',
+        en: 'LEARNING SEARCH (ENTER COCKTAIL NAME):',
+    },
     blogIntro: {
         zh: '亲爱的朋友，这是一个不公开博客。 如果你想学习鸡尾酒，请输入酒名查看； 如果你只是想要偷窥我的树洞，那请你转身离开，去看综艺节目吧。',
         en: 'Dear friend, this is a private blog. If you want to learn about cocktails, enter the drink name to search. If you just want to peek into my secrets, please turn around and go watch variety shows instead.',
@@ -152,7 +156,7 @@ export const uiTranslations = {
     // Thought Bubble (notebook tutorial)
     notebookTutorial: {
         zh: '都出来写博客了，怎么还要这样藏来藏去，看来我要在其他地方获得一些酒名的线索才能偷窥他的树洞。这个闪来闪去的特效又是什么，有没有考虑过读者的眼睛，算他有良心还放了个可以关闭的按钮。',
-        en: "He writes a blog but still hides everything... I'll need to find cocktail names elsewhere to peek into his secrets. And what's with this flickering effect? At least he was kind enough to add a toggle button.",
+        en: "Writes a blog yet still hides like this... Looks like I'll need to find clues for drink names elsewhere to peek into his secret hole. And what is this flickering effect? Has he considered the readers' eyes? Suppose he has some conscience adding a close button.",
     },
     recorderTutorial: {
         zh: '苹果这家伙还藏了不少秘密，连一个录音机都设置了机关，看起来除了一个公开的录音外，其他的录音都需要按照对话对象+日期的格式检索才能暴露',
