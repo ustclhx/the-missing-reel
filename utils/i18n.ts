@@ -116,6 +116,10 @@ export const uiTranslations = {
         zh: '发布者',
         en: 'Posted by',
     },
+    archiveDateLabel: {
+        zh: '始于 2020',
+        en: 'SINCE 2020',
+    },
     readme: {
         zh: '主页',
         en: 'README',

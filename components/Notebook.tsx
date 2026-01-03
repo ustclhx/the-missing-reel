@@ -578,7 +578,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                                                 </div>
                                                 <div>
                                                     <h4 className="font-bold text-stone-700 group-hover:text-sky-700 font-mono">{entry.title}</h4>
-                                                    <p className="text-[10px] text-stone-400 font-mono uppercase">2020 ARCHIVE</p>
+                                                    <p className="text-[10px] text-stone-400 font-mono uppercase">{t('archiveDateLabel', language)}</p>
                                                 </div>
                                                 <span className="ml-auto text-stone-300 group-hover:text-sky-500 font-mono text-xs">OPEN →</span>
                                             </button>
