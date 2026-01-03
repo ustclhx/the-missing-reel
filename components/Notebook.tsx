@@ -312,8 +312,8 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
             {/* Blog Header */}
             <div className="bg-sky-700 text-white p-4 border-b-4 border-sky-900 flex justify-between items-center shadow-lg relative z-20">
                 <div>
-                    <h1 className="text-xl font-bold tracking-tight">Apple's Secret Space</h1>
-                    <p className="text-xs text-sky-200 mt-1">只记录真实的感受。</p>
+                    <h1 className="text-xl font-bold tracking-tight">{t('blogTitle', language)}</h1>
+                    <p className="text-xs text-sky-200 mt-1">{t('blogSubtitle', language)}</p>
                 </div>
                 <div className="flex items-center gap-3">
                     {onToggleFlicker && (
@@ -321,10 +321,10 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                             onClick={onToggleFlicker}
                             className={`text-[10px] px-2 py-1 rounded border transition-colors ${isFlickerDisabled ? 'bg-stone-600 border-stone-500 text-stone-300 hover:bg-stone-500' : 'bg-sky-600 border-sky-400 text-white hover:bg-sky-500'}`}
                         >
-                            {isFlickerDisabled ? '特效: OFF' : '特效: ON'}
+                            {isFlickerDisabled ? t('effectsOff', language) : t('effectsOn', language)}
                         </button>
                     )}
-                    <button onClick={onBack} className="text-xs bg-sky-800 hover:bg-sky-600 px-3 py-1 rounded border border-sky-400">退出登录</button>
+                    <button onClick={onBack} className="text-xs bg-sky-800 hover:bg-sky-600 px-3 py-1 rounded border border-sky-400">{t('logout', language)}</button>
                 </div>
             </div>
 
@@ -358,7 +358,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
                         onClick={() => setSelectedEntryId(null)}
                         className="sticky top-0 left-0 ml-auto mb-4 text-[10px] sm:text-xs font-mono text-stone-500 hover:text-sky-600 flex items-center gap-1 bg-white/95 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-2 rounded border border-stone-300 shadow-lg transition-all hover:shadow-xl hover:border-sky-400 z-50 w-fit"
                     >
-                        ← BACK TO INDEX
+                        {t('backToIndex', language)}
                     </button>
                 )}
 
