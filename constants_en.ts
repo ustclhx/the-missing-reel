@@ -219,13 +219,13 @@ Apple：__White Lady__? __Side Car__? __Whisky Sour__?
 Monty：The whisky one, make the version with sherry.
 Apple：Got it, but I haven't made it before, can only follow Ash's recipe.
 Monty：No problem, I'm not Vin, don't have that many requirements.
-Apple：Tell me the story while I make it, what's behind this book?
+Apple：Tell me the story while I am making it, what's behind this book?
 
 Accompanied by Monty's narration, sounds of ice hitting metal occasionally come through.
 
 Monty：When we first discovered this bar, the missing friend had just finished his first novel.
 Apple：Didn't he want to make films? How did he start writing novels?
-Monty：Who knows, maybe because it's free?
+Monty：Who knows? Maybe because it doesn't cost anything.
 Apple：A full-length novel then.
 Monty：Rather than a novel, it's more like a collection of stream-of-consciousness writing exercises, flowing thoughts drifting around, you know? Nobody could read through it. I advised him to revise, he refused, even thought the publishers who rejected him knew nothing.
 Apple：What happened next?
@@ -244,8 +244,8 @@ Sound of pages turning.
 Apple：Did you send a message?
 Monty：It bounced back, the email had been cancelled by then. But at least it proved he hoped to be seen and get replies.
 Apple：Really a remarkable person. So after this he started thinking about making films?
-Monty：Before, after, can't say which came first. He was always like a headless fly, ended up accomplishing nothing and just lost himself.
-__Stranger 1__：__What remarkable person, he's just crazy.__
+Monty：Before, after, can't say which came first. He was always like a headless chicken, ended up accomplishing nothing and just lost himself.
+__Stranger 1__：__What a remarkable person, he's just crazy.__
 
 Recording unexpectedly interrupted.`
     },
@@ -257,7 +257,7 @@ Recording unexpectedly interrupted.`
         content: `Sound of a broom sweeping broken glass, vague cursing in the background. Nearby, heavy breathing.
 
 __Apple__：Did the bleeding stop? Want me to get you another towel?
-__Vin__：Nothing to change, just a scrape. If I hadn't had a few drinks today, how could he have hurt me?
+__Vin__：No need, just a scrape. If I hadn't had a few drinks today, how could he have hurt me?
 Apple：Why did you have to? Haven't you known each other for years? Why say things he doesn't want to hear?
 Vin：I've been holding it in for too long. Tired of him acting all day, like he's the only one in the world who cares.
 Apple：So you also knew the missing person?
@@ -271,7 +271,7 @@ Vin：Why does it smell oxidized? Like rust!
 Apple：I don't know, I followed the recipe... Hey, let me make you a new one, okay?
 Vin：Will remaking it be better?
 Apple：I don't know...
-Vin：What day do you have off?
+Vin：What day are you off?
 Apple：Every Tuesday...
 Vin：So that's __4 days from now__, when __Ash__ works himself, right? I'll come back then for the correct taste. This one's on you.
 Apple：—Wait, you mentioned the old bar earlier, where exactly is it?
@@ -281,7 +281,7 @@ Vin：I really hate these artsy youth, you know? Especially when they're clearly
 Apple：I understand.
 Vin：You understand nothing! I think you got along with him best.
 Apple...
-Vin：Don't say I didn't warn you. When you find the key, don't let curiosity drive you to explore the old bar and bring back something dirty.
+Vin：Don't say I didn't warn you. When you find the key, don't let curiosity drive you to explore the old bar and bring back something evil.
 Apple：No... really? Have you been inside?
 Vin：Of course!
 Apple：What did you see?
@@ -314,7 +314,7 @@ Microphone makes a scraping sound, as if the recorder was picked up and put down
 
 Apple：Right, I went to shoot some things.
 Lynn：What did you shoot?
-Apple：Can I tell you without telling others?
+Apple：Can I tell you something? Don’t tell anyone else.
 Lynn：I just got here, don't know anyone.
 Apple：This bar moved locations. The old bar is nearby, and __I happened to have the key__, so on my day off, I went in to look around.
 Lynn：How was it, fun?
@@ -326,7 +326,7 @@ Apple：Because the rumor is absurd, saying the old bar is haunted.
 Lynn：So that's why you went today. Well, did you see ghosts?
 Apple：It was a bit scary, but no ghosts.
 Lynn：Don't bring anything unclean here, I still want to come drink.
-Apple：They say that's why this place has no door. The owner calculated that __this way dirty things can't enter__.
+Apple：They say that's why this place has no door. The owner calculated that __this way evil things can't enter__.
 Lynn：Forget about ghosts for now. Want to try my drink?
 Apple：I...
 Lynn：Hey, what am I thinking? You're a bartender yourself, you must know everything.
@@ -1193,7 +1193,7 @@ How to put it, I'm gradually getting tired of the old bar's feuds.`
 
 Made two drinks __one evening__, got two completely different reviews. Taking out part of the whiskey from the classic recipe and replacing it with sherry that has more fermented and fruity notes indeed gives this classic many subtle flavors. Plum? Apple? Maybe.
 
-Watching __Monty__ drink, __Vin__ insisted I make him one, then drank every sip with a face full of displeasure. Really don't know why he always has to find fault with me—I should say, tonight he's been finding fault with everyone!
+Watching __Monty__ drink, __Vin__ insisted I make him one, then drank every sip with a face full of displeasure. Really don't know why he always has to be picking on me—I should say, tonight he's been finding fault with everyone!
 
 But thinking calmly, even unpleasantness is all part of bar operations, isn't it? Since it's daily life, it's worth recording.`
     },
@@ -1215,7 +1215,7 @@ Perhaps the common quality of being newcomers attracted us to each other? Anyway
 
 Until today.
 
-__Yesterday was just past Valentine's Day__, I thought the bar would be so quiet there wouldn't be a single person. Who knew she'd finally reappear, even remembering the promise from __a year and a half ago__. But times have changed, I've long forgotten its correct flavor and recipe—and most importantly, after experiencing those things, these past few days I don't care whether a drink tastes good or not, really can't muster that spirit!`
+__Yesterday was just past Valentine's Day__, I thought the bar would be so quiet there wouldn't be a single person. Who knew she'd finally reappear, even remembering the promise from __a year and a half ago__. But times have changed, I've long forgotten its correct flavor and recipe—and most importantly, after experiencing those things, these past few days I don't care whether a drink tastes good or not, I just don’t have it in me.`
     },
     {
         id: 'jam_1030',

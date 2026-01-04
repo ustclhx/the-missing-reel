@@ -265,7 +265,7 @@ export const Recorder: React.FC<RecorderProps> = ({
                             type="text"
                             value={searchName}
                             onChange={(e) => setSearchName(e.target.value)}
-                            placeholder="姓名"
+                            placeholder={t('placeholderName', language)}
                             className="bg-transparent text-stone-100 px-1.5 sm:px-2 py-1 text-xs sm:text-sm focus:outline-none w-14 sm:w-20 text-center font-serif-film placeholder-stone-600"
                         />
                         <span className="text-stone-400 font-mono select-none text-xs">_</span>
@@ -273,7 +273,7 @@ export const Recorder: React.FC<RecorderProps> = ({
                             type="text"
                             value={searchDate}
                             onChange={(e) => setSearchDate(e.target.value)}
-                            placeholder="日期"
+                            placeholder={t('placeholderDate', language)}
                             className="bg-transparent text-stone-100 px-1.5 sm:px-2 py-1 text-xs sm:text-sm focus:outline-none w-16 sm:w-24 text-center font-serif-film placeholder-stone-600"
                         />
                         <button
@@ -297,7 +297,7 @@ export const Recorder: React.FC<RecorderProps> = ({
                         ARCHIVED RECORDINGS
                     </div>
                     <div className="flex-1 overflow-y-auto p-2 space-y-2 scrollbar-hide">
-                        {message !== '等待输入...' && (
+                        {message !== '等待输入...' && message !== 'WAITING FOR INPUT...' && (
                             <div className="text-xs text-amber-500 p-2 font-mono text-center animate-pulse">{message}</div>
                         )}
                         {visibleTapes.map(log => {

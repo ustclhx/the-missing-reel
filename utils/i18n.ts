@@ -128,6 +128,14 @@ export const uiTranslations = {
         zh: '学习检索 (输入鸡尾酒名):',
         en: 'LEARNING SEARCH (ENTER COCKTAIL NAME):',
     },
+    placeholderName: {
+        zh: '姓名',
+        en: 'NAME',
+    },
+    placeholderDate: {
+        zh: '日期',
+        en: 'DATE',
+    },
     blogIntro: {
         zh: '亲爱的朋友，这是一个不公开博客。 如果你想学习鸡尾酒，请输入酒名查看； 如果你只是想要偷窥我的树洞，那请你转身离开，去看综艺节目吧。',
         en: 'Dear friend, this is a private blog. If you want to learn about cocktails, enter the drink name to search. If you just want to peek into my secrets, please turn around and go watch variety shows instead.',
