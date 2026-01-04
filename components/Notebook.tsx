@@ -100,7 +100,7 @@ export const Notebook: React.FC<NotebookProps> = ({ onBack, unlockedBlogs, onUnl
             }
             setSearchQuery('');
         } else {
-            setErrorMsg(language === 'zh' ? '鸡尾酒配方没10000个也有9000个，这么试是学不到真本事的' : 'There are 10,000 cocktail recipes out there. Blind guessing isn\'t going to teach you anything.');
+            setErrorMsg(language === 'zh' ? '鸡尾酒配方没10000个也有9000个，这么试是学不到真本事的' : 'Ten thousand recipes. You\'ll never learn them just by taking wild stabs at it.');
         }
     };
 
