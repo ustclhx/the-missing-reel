@@ -1067,7 +1067,105 @@ Sipping sound.
 
 Vin：It's good. Want to try?
 Apple：It's okay, you drink it.
-Vin：Try it, might become your signature product in the future.`
+Vin：Try it, might become your signature product in the future.
+Apple：That would be quite dramatic, even absurd.
+Vin：How so?
+Apple：Never mind.
+
+Sipping sound.
+
+Apple：Mm, not bad.
+Vin：Kid's so modest! Alright, pour yourself whatever you want, my treat today.
+Apple：What's the occasion? Suddenly treating me.
+Vin：I'm moving, came to say goodbye.
+Apple：Moving? So sudden?
+Vin：Yeah, well, not really. I've always wanted to change cities, you know that.
+Apple：I thought you were just talk. Where to?
+Vin：Home first, see where to next spring. Anyway, old friends are scattering, I should look forward too.
+Apple：When do you leave?
+Vin：Done packing, shipping tomorrow, leaving the day after.
+Apple：Then—should I call Ash, get him to come in?
+Vin：No need, not worth it. Just chatting with you is fine.
+Apple：I thought you two reconciled...
+Vin：Can't say we didn't, can't say we did.
+Apple：What do you mean?
+Vin：Hard to explain.
+Apple：But you've known each other for years, I've barely been here long.
+Vin：It just faded, you know? Faded to the point where even a goodbye is unnecessary. Just thinking about that scene is gross.
+Apple：I think I get it. Ash once said customers change in waves, and he has to update himself with the new regulars. Once updated, the old stuff gets blurry, forgotten.
+Vin：That's why I say, he looks nice but is actually cruel. Maybe that personality is born for this job.
+Apple：He comes in less now, leaves it all to me.
+Vin：Hang in there. If I come back to visit, I want to drink this again. How about giving it a name?
+Apple：Don't worry, I'll remember. But maybe you should drink a __Steph__ then, since that was the first drink I made you.
+Vin：Still holding a grudge? Actually you made it fine, but we just met back then, and it was your first day, I couldn't look easy to handle, you know?
+Apple：So you were pranking me.
+Vin：Just a joke. Come on, bring out those reels from __Old Mo__, let me take a last look at the old days.
+
+Sound of a bag being placed on the bar.
+
+Vin：Ten years gone in a flash, look how young I was.
+Apple：You can look at this too.
+Vin：What is it?
+Apple：That year I stole your key and took photos at the old bar.
+Vin：I knew it.
+Apple：Look at this.
+
+Sound of thin sheets sliding.
+
+Apple：See, if you stack these frames with white circles, does it look like a silhouette?
+Vin：What, you also think Old Mo is trapped in these films?
+Apple：Why "also"?
+Vin：Forgot, probably heard someone mention it. Let me see...
+
+Sheets sliding.
+
+Apple：Hey, you can't stack them all, otherwise...
+Vin：Otherwise what? Look, you have to stack them all to look like a person.
+Apple：N-nothing.
+Vin：Does look a bit like one.
+
+Brief silence.
+
+Vin：Hey! Look at me, old and confused, almost fell for your ghost story.
+Apple：I'm too lazy to trick you.
+Vin：Alright, put them away.
+
+Bag being packed.
+
+Apple：Speaking of which, seen __Monty__ lately? Did you tell him your plans?
+Vin：If there's a chance, or you tell him.
+Apple：That'll be hard.
+Vin：Doesn't matter—honestly, don't dwell on these old folks, there'll be new customers.
+Apple：I have new customers.
+Vin：Better have. Alright, gotta go back and pack. If I have time tomorrow I'll come again.
+Apple：I'll walk you out.
+Vin：No need. The hills remain green and the waters flow long—see you around.
+Apple：See you tomorrow.
+
+Stool moving, footsteps receding.
+
+Vin：By the way.
+Apple：What?
+Vin：When I came in, I saw two people walking out.
+Apple：Oh, yeah?
+Vin：Remember asking who wrote that poem signed with an exclamation mark at the old bar?
+Apple：I remember.
+Vin：Looked a lot like that person.
+Apple：What? You mean __Dabai__? But wasn't he... wait, isn't he missing?
+Vin：Maybe I saw wrong. See you tomorrow.
+Apple：Wait—
+
+Door opens.
+Rapid footsteps receding.
+
+Apple：Huh? Where'd he go?
+
+Brief silence.
+
+Apple：Are you still there?
+
+The bar returns to silence.
+The frozen piano music continues to play endlessly.`
     },
 ];
 
@@ -1596,7 +1694,7 @@ export const FILM_ARCHIVE: FilmReel[] = [
         code: [2, 2, 2, 1],
         label: 'Film Fan',
         contentTitle: 'Vin_20221231',
-        contentDesc: 'Drunk Vin slumps asleep at the bar, a half-finished Perfect Manhattan beside him. Next to it, book pages read "Film Fan" by Taylor Soigir.',
+        contentDesc: 'Drunk Vin slumps asleep at the bar, a half-finished Perfect Manhattan beside him. Next to it, book pages read "filmnik!" by Taylor Soigir.',
         contentImage: getAssetPath('/assets/film_10.jpg')
     },
     {
