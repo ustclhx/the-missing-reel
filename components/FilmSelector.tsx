@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { FILM_ARCHIVE } from '../constants';
 import { FilmReel } from '../types';
+import { useLanguage } from '../contexts/LanguageContext';
+import { t } from '../utils/i18n';
 
 interface FilmSelectorProps {
     onBack: () => void;
@@ -84,6 +86,7 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
     unlockedReels,
     onUnlockReel
 }) => {
+    const { language } = useLanguage();
     const [reelId, setReelId] = useState(1);
     const [code, setCode] = useState<number[]>([1, 2, 3, 0]);
     const [message, setMessage] = useState('');
@@ -140,9 +143,9 @@ export const FilmSelector: React.FC<FilmSelectorProps> = ({
             onSelectReel(foundReel);
         } else {
             if (code.every(v => v === 0)) {
-                setMessage(`REEL #${String(reelId)}: 曝光过度，胶片全白。`);
+                setMessage(`REEL #${String(reelId)}: ${t('reelOverexposed', language)}`);
             } else {
-                setMessage('胶卷顺序错误，无法查看');
+                setMessage(t('reelOrderError', language));
             }
         }
     };

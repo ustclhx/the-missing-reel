@@ -4,7 +4,7 @@ import { AudioLog } from '../types';
 import { AUDIO_LOGS } from '../constants';
 import { ThoughtBubble } from './ThoughtBubble';
 import { useLanguage } from '../contexts/LanguageContext';
-import { t } from '../utils/i18n';
+import { t, Language } from '../utils/i18n';
 
 interface RecorderProps {
     onBack: () => void;
@@ -34,10 +34,11 @@ export const Recorder: React.FC<RecorderProps> = ({
     onTriggerEnding,
     onMusicStart
 }) => {
+    const { language } = useLanguage();
     const [currentLog, setCurrentLog] = useState<AudioLog | null>(null);
     const [searchName, setSearchName] = useState('');
     const [searchDate, setSearchDate] = useState('');
-    const [message, setMessage] = useState('等待输入...');
+    const [message, setMessage] = useState(t('recorderWaiting', language));
 
     // Script Player State
     const [scriptLines, setScriptLines] = useState<ScriptLine[]>([]);
@@ -107,7 +108,7 @@ export const Recorder: React.FC<RecorderProps> = ({
         const date = searchDate.trim();
 
         if (!name || !date) {
-            setMessage('请输入完整的姓名和日期。');
+            setMessage(t('recorderEnterInfo', language));
             return;
         }
 
@@ -117,18 +118,18 @@ export const Recorder: React.FC<RecorderProps> = ({
         if (foundLog) {
             if (!unlockedLogs.includes(foundLog.id)) {
                 onUnlockLog(foundLog.id);
-                setMessage('检索成功。加载中...');
+                setMessage(t('recorderSearchSuccess', language));
                 setTimeout(() => {
                     handlePlayLog(foundLog);
                     setSearchName('');
                     setSearchDate('');
                 }, 1000);
             } else {
-                setMessage('该录音已存在于列表中。');
+                setMessage(t('recorderExists', language));
                 handlePlayLog(foundLog);
             }
         } else {
-            setMessage('错误：未找到对应编号的录音。');
+            setMessage(t('recorderNotFound', language));
         }
     };
 
@@ -249,7 +250,7 @@ export const Recorder: React.FC<RecorderProps> = ({
         return 'text-amber-500/90 border-amber-900/50';
     };
 
-    const { language } = useLanguage();
+
 
     return (
         <div className="flex-1 flex flex-col bg-stone-900 relative">
@@ -297,7 +298,7 @@ export const Recorder: React.FC<RecorderProps> = ({
                         ARCHIVED RECORDINGS
                     </div>
                     <div className="flex-1 overflow-y-auto p-2 space-y-2 scrollbar-hide">
-                        {message !== '等待输入...' && message !== 'WAITING FOR INPUT...' && (
+                        {message !== t('recorderWaiting', Language.Chinese) && message !== t('recorderWaiting', Language.English) && (
                             <div className="text-xs text-amber-500 p-2 font-mono text-center animate-pulse">{message}</div>
                         )}
                         {visibleTapes.map(log => {

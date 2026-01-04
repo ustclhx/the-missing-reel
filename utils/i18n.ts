@@ -62,6 +62,26 @@ export const uiTranslations = {
     },
 
     // Recorder Interface
+    recorderWaiting: {
+        zh: '等待输入...',
+        en: 'WAITING FOR INPUT...',
+    },
+    recorderEnterInfo: {
+        zh: '请输入完整的姓名和日期。',
+        en: 'PLEASE ENTER FULL NAME AND DATE.',
+    },
+    recorderSearchSuccess: {
+        zh: '检索成功。加载中...',
+        en: 'SEARCH SUCCESSFUL. LOADING...',
+    },
+    recorderExists: {
+        zh: '该录音已存在于列表中。',
+        en: 'RECORDING ALREADY IN ARCHIVE.',
+    },
+    recorderNotFound: {
+        zh: '错误：未找到对应编号的录音。',
+        en: 'ERROR: RECORDING NOT FOUND.',
+    },
     audioLogs: {
         zh: '录音档案',
         en: 'Audio Logs',
@@ -157,6 +177,14 @@ export const uiTranslations = {
     selectReel: {
         zh: '选择胶卷',
         en: 'Select Reel',
+    },
+    reelOverexposed: {
+        zh: '曝光过度，胶片全白。',
+        en: 'OVEREXPOSED. FILM IS BLANK.',
+    },
+    reelOrderError: {
+        zh: '胶卷顺序错误，无法查看',
+        en: 'INCORRECT REEL ORDER. CANNOT VIEW.',
     },
 
     // Progress Tracker
