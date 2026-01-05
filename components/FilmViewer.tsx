@@ -26,7 +26,7 @@ export const FilmViewer: React.FC<FilmViewerProps> = ({ film, onBack }) => {
       <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] z-0 pointer-events-none animate-pulse"></div>
 
       <button onClick={onBack} className="absolute top-3 sm:top-6 left-3 sm:left-6 text-stone-500 hover:text-white z-30 text-[10px] sm:text-xs font-mono tracking-widest uppercase">
-        [ EJECT ]
+        [ RETURN ]
       </button>
 
       <div className="flex-1 flex items-center justify-center relative z-10 perspective-1000">

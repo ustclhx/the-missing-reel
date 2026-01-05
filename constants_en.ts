@@ -99,7 +99,7 @@ Sound of rummaging.
 Apple：Sorry, but whose camera is this? I see some film has been marked, it must have already been shot.
 Ash：Are you saying I'm not cultured enough to have such an elegant hobby?
 Apple：No... I didn't mean that...
-Ash：I really don't have this hobby. An old customer left it behind. He wanted to film daily records of the bar, I didn't agree. He tried to film secretly, and I confiscated the equipment after discovering it.
+Ash：I really don't have this hobby. A long-time regular left it behind. He wanted to film daily records of the bar, I didn't agree. He tried to film secretly, and I confiscated the equipment after discovering it.
 Apple：So why are you letting me film now?
 Ash：Did I say you could film in the bar?
 Apple：I thought...
@@ -373,7 +373,7 @@ Lynn：Really, not a single person here. Even __Vin__ and __Monty__ aren't here.
 Apple：You know Vin and Monty?
 Lynn：Yes... last time I came, they introduced you to me.
 Apple：The two of them, together? Strange, they usually don't drink together.
-Lynn：Maybe the whisky's doing.
+Lynn：Perhaps it was just the whiskey at work.
 Apple：I feel like most times drinking makes their conflict worse—anyway, Monty hasn't been here for months, and Vin... my boss won't let him come to this bar anymore.
 Lynn：Won't let him come? Isn't he an old customer? Known for years. Did something serious happen?
 Apple：Serious but not serious. Hard to explain in a sentence or two. Remember last time when I mentioned the old bar?
@@ -520,7 +520,7 @@ Monty：Actually most cocktail names are randomly chosen, just like naming a cat
 Apple：I know that, sometimes we randomly make something, and customers rush to name it. You should see these people...
 Monty：For example my favorite is called __Goooooose__. Asked Ash why that name, he couldn't explain either.
 Apple：What drink is that? Never heard of it.
-Monty：Seems your research of his coaster recipes isn't thorough. By the way, lots of new faces at the bar today, and they all know you well. Looks like Ash has retired to the second line.
+Monty：Seems your research of his coaster recipes isn't thorough. By the way, lots of new faces at the bar today, and they all know you well. Looks like Ash is taking a back seat.
 Apple：Why are you getting shy? I thought you... you guys were the real owners of this bar.
 Monty：Just feel... everything's changed.
 Apple：Earlier before Ash got drunk he told me, customers come in waves. The old wave always tires, or their lifestyles change and they gradually disappear, but there's always a new wave, those young people who find everything fresh.
@@ -546,7 +546,7 @@ Monty：Okay. Let's not talk about this.`
         locked: true,
         content: `In the background, noisy electronic music gradually fades, slow jazz piano rises. Distant customers voice doubts.
 
-__Apple__：If they hadn't brought soju, you'd probably never remember this recipe.
+__Apple__：If they hadn't brought shochu, you'd probably never remember this recipe.
 __Ash__：There are many good recipes. If one or two are forever forgotten, so what? I always say, isn't there alcohol in cocktails? If there's alcohol, it tastes good. Deny this and you're not a qualified drinker!
 Apple：What kind of nonsense is that?
 Ash：Hahaha, don't mind me. I just want to tell you, enjoy the alcohol, enjoy the changes. Every drink tastes like it does for a whole chain of reasons. Feel these differences, otherwise what's the point?
@@ -595,7 +595,7 @@ Several bodies bump into the bar, clinking toasts approach.
 
 Old Chen：This place is so lively...
 Apple：Oh, sorry, a regular's birthday, all university students, so a bit unruly. You said you want what?
-Old Chen：It's okay, I can think more. If I really can't decide... anyway I'll __come again tomorrow__.
+Old Chen：It's okay, I need more time. If I really can't decide... anyway I'll __come again tomorrow__.
 Apple：Thank you for your patronage.
 Old Chen：Don't mention it, it's a rare opportunity... By the way, I heard this bar has a previous location, it wasn't in this place before, right?
 Apple：That's right. The old bar is nearby, was demolished last year. We've been here quite a while.
@@ -607,7 +607,7 @@ Old Chen：Right! Called Ash. Before I went abroad I often went to drink his coc
 Apple：I haven't seen any of those people you mentioned.
 Old Chen：Ah, seems they're like me, gradually scattered. I thought I'd see some familiar faces this time.
 Apple：Do you know __Monty__?
-Old Chen：The one who does music, right?
+Old Chen：The one who makes music, right?
 Apple：Right. After we moved he came here a few times, but doesn't come anymore either.
 Old Chen：That's too bad. I brought this, wanted to catch up with everyone—
 
