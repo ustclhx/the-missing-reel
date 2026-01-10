@@ -683,7 +683,7 @@ Apple：He comes, but leaves early.
 Old Chen：It's only... not even eleven.
 Apple：Can't help it, if he stays up late he can't sleep. Doesn't matter, when he comes he just lies on that single sofa and sleeps anyway.
 
-Sofa creaks, someone sits on it.
+Sofa creaks, someone is sitting on it.
 
 Old Chen：I know this sofa, rescued from the old bar right? Still quite comfortable.
 Apple：Comfortable is comfortable, whoever sits on it wants to sleep, but it looks like it's falling apart.
@@ -770,7 +770,7 @@ Lynn：I knew it was your little secret, afraid telling you would make you uncom
 Apple：Nonsense, I never mentioned the bar's location in the blog.
 Lynn：You did, but you've written so many about drinks, you forgot. Didn't you say under the search box yourself, there must be 9,000 cocktail recipes if not 10,000, right? Forgetting some recipes is very normal. By the way, I really like your shaker button design, just the background color is a bit ugly, haha.
 Apple：... I never got around to removing that background color, didn't think a second person would see this thing. How did you figure it out?
-Lynn：Don't worry about that. Not only did I play at yours, I secretly played at other bars too, then randomly made up names and told them this was some modern classic recipe I drank that was really good. Forcing bartenders to push their limits.
+Lynn：None of your business. I didn't just hang out here; I secretly visited other bars too. I'd make up random names, tell them it was some modern classic recipe I'd had that was delicious. Forced the bartenders to push their limits.
 Apple：You're a demon.
 Lynn：I'll take that as a compliment.
 
@@ -978,7 +978,7 @@ Laughter immediately follows.
 
 __Apple__：Sorry, broke two more glasses in front of you. Ha... hand slipped.
 __Monty__：You're drunk.
-Apple：Who told your recipe to be so magical? Couldn't help it, downed three glasses.
+Apple：Blame your recipe for being so magical. I couldn't resist, drank three in a row.
 Monty：I think it's just average.
 Apple：Isn't it weird? The things you usually drink are like slop, how does your brain store such clean recipes?
 Monty：Because whether it's good or not doesn't matter to me.

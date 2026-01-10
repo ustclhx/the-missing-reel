@@ -72,7 +72,7 @@ export const uiTranslations = {
     },
     recorderSearchSuccess: {
         zh: '检索成功。加载中...',
-        en: 'SEARCH SUCCESSFUL. LOADING...',
+        en: 'RESULTS FOUND',
     },
     recorderExists: {
         zh: '该录音已存在于列表中。',
@@ -102,7 +102,6 @@ export const uiTranslations = {
         zh: '返回',
         en: 'Back',
     },
-
     // Blog Interface
     blogTitle: {
         zh: "Apple's Secret Space",
@@ -162,7 +161,7 @@ export const uiTranslations = {
     },
     searchError: {
         zh: '鸡尾酒配方没10000个也有9000个，这么试是学不到真本事的',
-        en: "There are thousands of cocktail recipes - you won't master them by random guessing",
+        en: "There are thousands of cocktail recipes out there; you won't learn the real craft by guessing like this.",
     },
     alreadyUnlocked: {
         zh: '该日志已解锁。',
